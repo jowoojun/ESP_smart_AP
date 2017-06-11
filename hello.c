@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(){
- printf("he is hungry\n");
- printf("and slepping\n");
- return 0;
+ 	printf("오늘 따라 랙이 너무 심해\n");
+	printf("hello\n"); 
+return 0;
 }
