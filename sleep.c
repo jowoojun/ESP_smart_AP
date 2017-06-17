@@ -4,5 +4,7 @@ int main (){
 	for(i = 0 ; i < 3 ; i++){
 		printf("I want to sleep \n");
 	} 
+	sleep(5);
+	printf("good morning\n");
 	return 0;
 }
