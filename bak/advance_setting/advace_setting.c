@@ -28,8 +28,10 @@ int main(void){
     }
 
     // DNS 바꾸기
+    system("sudo ./change_DNS.sh");
 
     // 채널 바꾸기
+    system("sudo ./change_channel.sh");
     
     //restart dhcpcd hostapd
     system("sudo ifdown wlan0; sudo ifup wlan0");
