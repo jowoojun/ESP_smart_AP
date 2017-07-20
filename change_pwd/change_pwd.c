@@ -34,7 +34,7 @@ int main( int argc , char * argv[] ){
             // change ssid and write to bakup file
             strcpy(str , "wpa_passphrase=" );
             strcat(str , new_pwd );
-            fprintf(bak , "%s" , str);
+            fprintf(bak , "%s\n" , str);
         }else{
             // write to bakup file
             fprintf(bak , "%s" , str);
