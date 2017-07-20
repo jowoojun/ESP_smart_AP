@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -7,64 +7,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/blog-home.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/general.js"></script>
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/blog-home.css" rel="stylesheet">
     <title>일반설정</title>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">일반설정</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<form>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="wrapper">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">일반설정</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">인터넷 정보</a>
+                        <a href="#" onclick="toggle_menu('internet_info')">인터넷 정보</a>
                     </li>
                     <li>
-                        <a href="#">Admin 설정</a>
+                        <a href="#" onclick="toggle_menu('admin_setting')">Admin 설정</a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <div class="col-md-8 well" id="internet_info">
+            <div class="col-md-8 well menu" id="internet_info" style="display:block;">
                 <h1 class="page-header">
-                    일반설정
                     <small>인터넷 정보</small>
                 </h1>
-
-                <!-- First Blog Post -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-                <hr>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th>
+                        인터넷 연결상태
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        외부 IP
+                      </th>
+                      <td>
+                        192.168.82.200
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        기본 DNS 서버
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        보조 DNS 서버
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        GATEWAY
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        DHCP 시작 IP
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        DHCP 종료 IP
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        MAC 주소
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        원격관리 정보
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                  </table>
+                </div>
             </div>
 
+            <div class="col-md-8 well menu" id="admin_setting" style="display:none;">
+                <h1 class="page-header">
+                    <small>Admin 설정</small>
+                </h1>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th>
+                        SSID변경
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        비밀번호 변경
+                      </th>
+                      <td>
+                        192.168.82.200
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        최대 접속 제한
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        비밀번호 횟수제한
+                      </th>
+                      <td>
+                        인터넷에 정상적으로 연결됨
+                      </td>
+                    </tr>
+                  </table>
+                  <input type=submit class="btn btn-default save_config" value="저장">
+                </div>
+                <hr />
+                <h1 class="page-header">
+                    <small>시스템설정</small>
+                </h1>
+                <div class="col-md-3">
+                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="시스템 재시작">
+                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="초기설정 복원">
+                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="자동종료 설정">
+                </div>
+            </div>
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
                 <!-- Side Widget Well -->
-                <div class="well">
+                <div class="well" id="internet_info_desc" style="display:block;">
                     <h4>설명</h4>
                       <ul>
-                        <li>SSID : ...</li>
+                        <li>SSID : 무선 랜을 통해 전송되는 패킷들의 각 헤더에 덧붙여지는 32byte 길이의 고유 식별자</li>
                         <li>인터넷 연결방식 : ...</li>
                         <li>외부 IP : ...</li>
                       </ul>
                 </div>
+
+                <div class="well" id="admin_setting_desc" style="display:none;">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>admin : 무선 랜을 통해 전송되는 패킷들의 각 헤더에 덧붙여지는 32byte 길이의 고유 식별자</li>
+                        <li>setting : ...</li>
+                        <li>desc : ...</li>
+                      </ul>
+                </div>
             </div>
+            <div class="col-md-3">
+                <a class="btn btn-default btn-lg btn-block" role="button" href="#">고급설정</a>
+            </div>
+        </div>
         </div>
         <!-- /.row -->
 
@@ -82,7 +209,7 @@
 
     </div>
     <!-- /.container -->
-
+</form>
 </body>
 
 </html>
