@@ -23,3 +23,21 @@ footer {
 .sys_config{
   margin-bottom: 10px;
 }
+
+.tabcontent.current{
+  display: block;
+}
+
+.tabcontent{
+  display: none;
+}
+
+.menu ul{
+  background-color: #eee;
+  border-bottom-left-radius: : 6px;
+  border-bottom-right-radius:  6px;
+}
+
+.menu ul li{
+  cursor: pointer;
+}

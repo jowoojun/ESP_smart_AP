@@ -1,16 +1,10 @@
-function toggle_menu(id){
-  var myId=document.getElementById(id);
-  if(id=="internet_info"){
-    if(myId.style.display=="none"){
-      myId.style.display="block";
-      var otherId=document.getElementById('admin_setting');
-      otherId.style.display="none";
-    }
-  }else{
-    if(myId.style.display=="none"){
-      myId.style.display="block";
-      otherId=document.getElementById('internet_info');
-      otherId.style.display="none";
-    }
-  }
-}
+$(function(){
+    $('ul.tab li').click(function(){
+      var active_tab=$(this).attr('data-tab');
+      $('ul.tab li').removeClass('current');
+      $('.tabcontent').removeClass('current');
+      $(this).addClass('current');
+      $('#'+active_tab).addClass('current');
+      $('#'+active_tab+'_desc').addClass('current');
+    })
+});

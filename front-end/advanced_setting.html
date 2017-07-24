@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/advanced.js"></script>
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/blog-home.css" rel="stylesheet">
+    <title>고급설정</title>
+</head>
+
+<body>
+<form>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="wrapper">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">고급설정</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav menu tab">
+                    <li><a href="#">네트워크관리</a>
+                      <ul class="sub">
+                        <li class="current" data-tab="dynamic_ip">유동 IP</li>
+                        <li data-tab="static_ip">고정 IP</li>
+                      </ul>
+                    </li>
+                    <li><a href="#">유해사이트차단</a>
+                      <ul class="sub">
+                        <li data-tab="block_word">특정단어차단</li>
+                        <li data-tab="block_site">유해사이트차단</li>
+                      </ul>
+                    </li>
+                    <li data-tab="blacklist"><a href="#">블랙리스트</a></li>
+                    <li><a href="#">NAT/Router</a>
+                      <ul class="sub">
+                        <li data-tab="port_forwarding">포트포워딩</li>
+                        <li data-tab="twin_ip">트윈 IP</li>
+                      </ul>
+                    </li>
+                    <li><a href="#">시스템관리</a>
+                      <ul class="sub">
+                        <li data-tab="system_log">System Log</li>
+                        <li data-tab="firmware">펌웨어</li>
+                      </ul>
+                    </li>
+                    <li><a href="general_settings.html">HOME</a></li>
+                </ul>
+            </div>
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 well tabcontent current" id="dynamic_ip">
+                <h1 class="page-header">
+                    <small>유동IP</small>
+                </h1>
+            </div>
+
+            <div class="col-md-8 well tabcontent" id="static_ip">
+                <h1 class="page-header">
+                    <small>고정IP</small>
+                </h1>
+            </div>
+
+            <div class="col-md-8 well tabcontent" id="block_word">
+                <h1 class="page-header">
+                    <small>특정단어차단</small>
+                </h1>
+            </div>
+            <div class="col-md-8 well tabcontent" id="block_site">
+                <h1 class="page-header">
+                    <small>유해사이트 차단</small>
+                </h1>
+            </div>
+            <div class="col-md-8 well tabcontent" id="blacklist">
+                <h1 class="page-header">
+                    <small>블랙리스트</small>
+                </h1>
+            </div>
+
+            <div class="col-md-8 well tabcontent" id="port_forwarding">
+                <h1 class="page-header">
+                    <small>포트포워딩</small>
+                </h1>
+            </div>
+            <div class="col-md-8 well tabcontent" id="twin_ip">
+                <h1 class="page-header">
+                    <small>트윈IP</small>
+                </h1>
+            </div>
+
+            <div class="col-md-8 well tabcontent" id="system_log">
+                <h1 class="page-header">
+                    <small>System Log</small>
+                </h1>
+            </div>
+            <div class="col-md-8 well tabcontent" id="firmware">
+                <h1 class="page-header">
+                    <small>펌웨어</small>
+                </h1>
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+                <!-- Side Widget Well -->
+                <div class="well tabcontent current" id="dynamic_ip_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>유동IP 설명</li>
+                      </ul>
+                </div>
+                <div class="well tabcontent" id="static_ip_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>고정IP 설명</li>
+                      </ul>
+                </div>
+
+                <div class="well tabcontent" id="block_word_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>특정단어 차단 설명</li>
+                      </ul>
+                </div>
+                <div class="well tabcontent" id="block_site_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>유해사이트 차단 설명</li>
+                      </ul>
+                </div>
+
+                <div class="well tabcontent" id="blacklist_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>블랙리스트 설명</li>
+                      </ul>
+                </div>
+
+                <div class="well tabcontent" id="port_forwarding_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>포트포워딩 설명</li>
+                      </ul>
+                </div>
+                <div class="well tabcontent" id="twin_ip_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li >트윈IP 설명</li>
+                      </ul>
+                </div>
+                <div class="well tabcontent" id="system_log_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>시스템로그 설명</li>
+                      </ul>
+                </div>
+                <div class="well tabcontent" id="firmware_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li >펌웨어 설명</li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr />
+                    <p>Copyright &copy; ESP smart AP 2017</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+</form>
+</body>
+
+</html>
