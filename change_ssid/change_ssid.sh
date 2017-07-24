@@ -10,5 +10,3 @@ sudo ./change_ssid $1
 sudo rm /etc/hostapd/hostapd.conf
 sudo mv /etc/hostapd/hostapd.bak /etc/hostapd/hostapd.conf
 
-# restart hostapde
-sudo service hostapd restart
