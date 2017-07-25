@@ -11,7 +11,6 @@ if [ "$1" =  "static" ];then
     sudo ./change_static_ip
 fi
 
-
 if [ "$1" =  "dynamic" ];then 
     # setting for dynamic ip
     # run C file
