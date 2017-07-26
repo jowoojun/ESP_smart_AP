@@ -28,8 +28,11 @@ int main(void){
         if( !strncmp("iface wlan0 inet dhcp", str, 21 ) ){
             
             strcpy(str,"iface wlan0 inet");
-            strcat(str," static");
+            strcat(str," static\n");
             fprintf(bak,str);
+            fprintf(bak, "address \n");
+            fprintf(bak, "netmask \n");
+            fprintf(bak, "gateway \n");
             break;
 
         }else {

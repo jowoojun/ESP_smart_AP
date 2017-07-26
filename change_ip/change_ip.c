@@ -26,14 +26,12 @@ int change_interface(char new_ip[MAX]){
 
     while( fgets(str , MAX , origin) != NULL ){
         
-        if( strncmp( "iface wlan0 inet static" , str, 23) == 0 ){
+        if( strncmp( "address " , str, 8) == 0 ){
 
             // add new ip address
-            fprintf(bak, "%s" , str);
             strcpy(str , "\taddress ");
             strcat(str , new_ip);
-            fprintf(bak , "%s" ,str);
-            break;
+            fprintf(bak , "%s\n" ,str);
 
         }else{
             fprintf(bak , "%s" ,str);
