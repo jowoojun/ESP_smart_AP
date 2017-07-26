@@ -1,8 +1,5 @@
 #!/bin/sh
 
-#make initial bakup
-sudo cp /etc/network/interfaces /etc/network/interfaces.initial_bakup
-
 #have to change the interface
 #choose ip way
 if [ "$1" =  "static" ];then 

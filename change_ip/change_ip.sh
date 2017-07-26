@@ -1,9 +1,5 @@
 #! /bin/sh
 
-# make initial bakup file
-sudo cp /etc/network/interfaces /etc/network/interfaces.initial_bakup
-sudo cp /etc/dnsmasq.conf /etc/dnsmasq.initial_bakup
-
 # run change_ip.c
 sudo ./change_ip $1
 

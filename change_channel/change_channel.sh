@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# initial bakup file
-sudo cp /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.initial_bakup
-
 # run change_channel.c
 sudo ./change_channel $1
 
