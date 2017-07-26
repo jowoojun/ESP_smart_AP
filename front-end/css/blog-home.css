@@ -41,3 +41,11 @@ footer {
 .menu ul li{
   cursor: pointer;
 }
+
+.ip_field{
+  width: 30px;
+}
+
+#ip_static_cont{
+  display: none;
+}
