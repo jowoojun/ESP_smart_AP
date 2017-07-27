@@ -33,6 +33,7 @@ int main(void){
             fprintf(bak, "address \n");
             fprintf(bak, "netmask \n");
             fprintf(bak, "gateway \n");
+            fprintf(bak, "dns-nameservers \n");
             break;
 
         }else {
