@@ -1,7 +1,7 @@
 $(function(){
   $("ul.sub").hide();
   $("ul.menu li").hover(function(){
-      $("ul:not(:animated)",this).slideDown("fast");
+      $("ul:not(:animated)",this).slideDown();
     },
     function(){
       $("ul",this).slideUp();
@@ -19,7 +19,6 @@ $(function(){
     $('#'+active_tab+'_desc').addClass('current');
   })
 });
-
 
 $(document).ready(function(){
   $("input[name='con_type']:radio").change(function(){
@@ -54,6 +53,22 @@ $(document).ready(function(){
       }else if(dns_server=="dns_static"){
         $(".dhcp_range").attr("readonly",false);
       }
+  });
+
+  $("#chk_all").click(function(){
+      $("input[name=mal_site_category]").prop("checked",true);
+  });
+
+  $("#chk_not_all").click(function(){
+    $("input[name=mal_site_category]").prop("checked",false);
+  });
+
+  $("#chk_all_day").click(function(){
+      $("input[name=day]").prop("checked",true);
+  });
+
+  $("#chk_not_all_day").click(function(){
+    $("input[name=day]").prop("checked",false);
   });
 
 });

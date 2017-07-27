@@ -32,6 +32,13 @@ footer {
   display: none;
 }
 
+.only_tabcontent.active_tab{
+  display: block;
+}
+
+.only_tabcontent{
+  display: none;
+}
 .menu ul{
   background-color: #eee;
   border-bottom-left-radius: : 6px;
@@ -42,10 +49,15 @@ footer {
   cursor: pointer;
 }
 
-.ip_field{
+.ip_field,
+.black_mac{
   width: 30px;
 }
 
 #ip_static_cont{
   display: none;
+}
+
+#mac_blacklist{
+  width:100%;
 }
