@@ -28,7 +28,52 @@ typedef struct _JSON {
     TOKEN tokens[TOKEN_COUNT];
 }JSON;
 
+// Get the string corresponding to the key
+char *getString(JSON *json, char *key){ 
+    int i;
+    for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
+        if(json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0){ // token's type is the string and token's string matches the key
+                if(json->tokens[i+1].type == TOKEN_STRING){ // next token is the string
+                    return json->tokens[i+1].string; // return next token's string
+                }
+        }
+    }
+    return NULL; // if no key is found
+}
 
+
+double getNumber(JSON *json, char *key)    // 키에 해당하는 숫자를 가져오는 함수
+{
+    int i ;
+        for (i = 0; i < TOKEN_COUNT; i++)    // 토큰 개수만큼 반복
+                {
+                            // 토큰 종류가 숫자이면서 토큰의 문자열이 키와 일치한다면
+                            if (json->tokens[i].type == TOKEN_STRING &&
+                                                strcmp(json->tokens[i].string, key) == 0)
+                                        {
+                                                        // 바로 뒤의 토큰(i + 1)이 숫자이면
+                                                       if (json->tokens[i + 1].type == TOKEN_NUMBER)
+                                                                            return json->tokens[i + 1].number;    // 바로 뒤에 있는 토큰의 숫자 반환
+                                                                }
+                                }
+
+            return 0.0;    // 키를 찾지 못했으면 0.0을 반환
+}
+/*
+// Get the Number corresponding to the key
+double getNumber(JSON *json, char *key){
+    int i;
+    for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
+        if(json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0){ // token's type is the string and token's string matches the key
+            if (json->tokens[i+1].type == TOKEN_NUMBER){  // next token is the number
+                printf("num2 pass\n");
+                return json->tokens[i+1].number; // return next token's number
+            }
+        }
+    }
+    return 0.0; // if no key is found
+}
+*/
 // Read JSON
 void parseJSON(char *file, int size, JSON *json){
     int tokenIndex = 0; // token index
@@ -181,6 +226,10 @@ void signalhandler(int signal){
     parseJSON(file, size, &json);
 
     // print JSON content
+    printf("SSID : %s\n", getString(&json, json.tokens[0].string));
+    printf("password :%s\n", getString(&json, json.tokens[2].string));
+    printf("channel : %f\n", getNumber(&json, json.tokens[4].string));
+    printf("\n");
     printf("%s : %s\n", json.tokens[0].string, json.tokens[1].string);
     printf("%s : %s\n", json.tokens[2].string, json.tokens[3].string);
     printf("%s : %f\n", json.tokens[4].string, json.tokens[5].number);
