@@ -33,13 +33,42 @@ char *getString(JSON *json, char *key){
     int i;
     for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
         if(json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0){ // token's type is the string and token's string matches the key
-                if(json->tokens[i+1].type == TOKEN_STRING){ // next token is the string
-                    return json->tokens[i+1].string; // return next token's string
+                if(json->tokens[i + 1].type == TOKEN_STRING){ // next token is the string
+                    return json->tokens[i + 1].string; // return next token's string
                 }
         }
     }
     return NULL; // if no key is found
 }
+
+// Get the string of the index corresponding to the key
+char *getArrayString(JSON *json, char *key, int index){ 
+    int i;
+    for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
+        if(json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0){ // token's type is the string and token's string matches the key
+            if(json->tokens[i + 1 + index].type == TOKEN_STRING && json->tokens[i + 1 + index].isArray == true){ // next token is the string and that is array
+                    return json->tokens[i + 1 + index].string; // return next token's index string 
+                }
+        }
+    }
+    return NULL; // if no key is found
+}
+
+// Get element count of the Array corresponding to the key
+int getArrayCount(JSON *json, char *key){ 
+    int i;
+    for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
+        if(json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0){ // token's type is the string and token's string matches the key
+            int j = 0;
+            while(json->tokens[i + j + 1].isArray == true){  // return the number of tokens that isArray is 1
+                j++;
+            }
+            return j;
+        }
+    }
+    return 0; // if no key is found
+}
+
 
 // Get the Number corresponding to the key
 double getNumber(JSON *json, char *key){ 
@@ -139,6 +168,46 @@ void parseJSON(char *file, int size, JSON *json){
  
                 }
                 break;
+            case '[':
+                {
+                    pos++; // goto next charater
+                    
+                    // loop until ]
+                    while(file[pos] != ']'){
+                        if(file[pos] == '"'){  // That is string
+                            // search string point
+                            char *begin = file + pos + 1;
+                            // search ending point
+                            char *end = strchr(begin, '"');
+                            if(end == NULL){
+                                break;
+                            }
+
+                            // real length of file
+                            int length = end - begin;
+
+                            // The type of the token is String
+                            json->tokens[tokenIndex].type = TOKEN_STRING;
+                            
+                            // allocate memory
+                            json->tokens[tokenIndex].string = malloc(length + 1);
+
+                            // The string is Array
+                            json->tokens[tokenIndex].isArray = true;
+
+                            // initialize allocated memory
+                            memset(json->tokens[tokenIndex].string, 0, length + 1);
+
+                            // copy only the length of the string from begin to begin+length
+                            memcpy(json->tokens[tokenIndex].string, begin, length);
+
+                            tokenIndex++;
+
+                            pos = pos + length + 1;
+                        }
+                        pos++;
+                    }
+                }
         }
         pos++;
     }
@@ -206,13 +275,18 @@ void signalhandler(int signal){
     parseJSON(file, size, &json);
 
     // print JSON content
-    printf("SSID : %s\n", getString(&json, json.tokens[0].string));
-    printf("password :%s\n", getString(&json, json.tokens[2].string));
-    printf("channel : %f\n", getNumber(&json, json.tokens[4].string));
+    printf("%s : %s\n", json.tokens[0].string, getString(&json, json.tokens[0].string));
+    printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
+    printf("%s : %f\n", json.tokens[4].string, getNumber(&json, json.tokens[4].string));
     printf("\n");
-    printf("%s : %s\n", json.tokens[0].string, json.tokens[1].string);
-    printf("%s : %s\n", json.tokens[2].string, json.tokens[3].string);
-    printf("%s : %f\n", json.tokens[4].string, json.tokens[5].number);
+    printf("%s : \n", json.tokens[6].string);
+    int lists = getArrayCount(&json, json.tokens[6].string);
+    
+    int i;
+    for(i = 0; i < lists; i++){
+        printf("  %s\n", getArrayString(&json, json.tokens[6].string, i));
+    }
+
 
     // release json
     freeJSON(&json);
