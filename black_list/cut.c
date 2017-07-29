@@ -1,11 +1,27 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
 #define MAX 100
 
+void log_print(){
+    FILE * log; // log file
+    
+    // open the log file
+    log = fopen("/home/ap_log/ap_system.log" ,"a");
+    if(!log){
+        printf("log file open fail\n");
+        return ;
+    }
+
+    fprintf(log,"%s\n","블랙리스트를 설정하여 차단");
+    
+    fclose(log);
+
+    return ;
+}
+
 int main( int argc , char * argv[] ){
-    FILE * orgin; // orgin file
+    FILE * origin; // orgin file
     FILE * bak ; // bakup file
 
     char str[MAX];
@@ -24,14 +40,14 @@ int main( int argc , char * argv[] ){
     }
     
     // open the rc.local
-    orgin = fopen("/home/pi/changgunLEE/esp_smart_ap/black_list/list.sh" , "r");
-    if(!orgin){
+    origin = fopen("/home/pi/changgunLEE/esp_smart_ap/black_list/list.sh" , "r");
+    if(!origin){
         printf("orgin file open fail\n");
         return 1;
     }
 
     // write the bakup
-    while ( fgets(str , MAX , orgin) != NULL){
+    while ( fgets(str , MAX , origin) != NULL){
         
         if( strncmp( str , " exit" , 5 ) == 0 ){
             // change iptalbes 
@@ -44,5 +60,13 @@ int main( int argc , char * argv[] ){
         }
     
     }
+
+    // close the files
+    fclose(origin);
+    fclose(bak);
+    
+    // log print
+    log_print();
+
     return 0;
 }

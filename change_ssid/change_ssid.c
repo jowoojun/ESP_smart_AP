@@ -3,6 +3,24 @@
 #include<string.h>
 #define MAX 100
 
+void log_print(){
+    FILE * log; // log file
+
+    // open the log file
+    log = fopen("/home/ap_log/ap_system.log" ,"a");
+    if(!log){
+        printf("log file open fail\n");
+        return ;
+    }
+
+    fprintf(log,"%s\n","ssid 변경");
+
+    fclose(log);
+
+    return ;
+}
+
+
 int main( int argc , char * argv[] ){
     
     FILE * orgin; // orgin file
@@ -45,7 +63,6 @@ int main( int argc , char * argv[] ){
     fcloseall();
 
     // write the log
-    printf("와이파이 이름 변경\n");
-
+    log_print();
     return 0;
 }

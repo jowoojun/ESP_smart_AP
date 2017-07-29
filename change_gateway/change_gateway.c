@@ -3,6 +3,23 @@
 #include <string.h>
 #define MAX 100
 
+void log_print(){
+    FILE * log; // log file
+    
+    // open the log file
+    log = fopen("/home/ap_log/ap_system.log" ,"a");
+    if(!log){
+        printf("log file open fail\n");
+        return ;
+    }
+
+    fprintf(log,"%s\n","블랙리스트를 설정하여 차단");
+    
+    fclose(log);
+
+    return ;
+}
+
 int change_gateway(char new_gateway[MAX]){
     
     FILE * origin; // orgin file
@@ -37,13 +54,21 @@ int change_gateway(char new_gateway[MAX]){
         }
     }
 
+    // close the files
+    fclose(origin);
+    fclose(bak);
+
     return 0;
 }
 
 int main( int argc , char * argv[] ){
     
+    // change gateway
     change_gateway( argv[1] );
     
+    // print log
+    log_print();
+
     return 0;
 }
 

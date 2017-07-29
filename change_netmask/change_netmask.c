@@ -3,6 +3,26 @@
 #include <string.h>
 #define MAX 100
 
+
+// log print
+void log_print(){
+    FILE * log; // log file
+
+    // open the log file
+    log = fopen("/home/ap_log/ap_system.log" ,"a");
+    if(!log){
+        printf("log file open fail\n");
+        return ;
+    }
+
+    fprintf(log,"%s\n","블랙리스트를 설정하여 차단");
+
+    fclose(log);
+
+    return ;
+}
+
+
 int change_netmask(char new_netmask[MAX]){
     
     FILE * origin; // orgin file
@@ -36,6 +56,10 @@ int change_netmask(char new_netmask[MAX]){
             fprintf(bak , "%s" ,str);
         }
     }
+
+    // close the files
+    fclose(origin);
+    fclose(bak);
 
     return 0;
 }

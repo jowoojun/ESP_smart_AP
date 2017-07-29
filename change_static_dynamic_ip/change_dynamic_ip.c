@@ -3,6 +3,23 @@
 #include <string.h>
 #define MAX 100
 
+void log_print(){
+    FILE * log; // log file
+
+    // open the log file
+    log = fopen("/home/ap_log/ap_system.log" ,"a");
+    if(!log){
+        printf("log file open fail\n");
+        return ;
+    }
+
+    fprintf(log,"%s\n","고정ip를 유동ip로 변경");
+
+    fclose(log);
+
+    return ;
+}
+
 int main(void){
     
     FILE * bak;
@@ -38,9 +55,12 @@ int main(void){
         
         }
     }
+    // close the files
+    fclose(origin);
+    fclose(bak);
 
     //print the log for client
-    printf("고정ip에서 유동ip로 변경 하였습니다\n");
+    log_print();
 
     return 0;
 }

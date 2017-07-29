@@ -3,6 +3,23 @@
 #include <string.h>
 #define MAX 100
 
+void log_print(){
+    FILE * log; // log file
+    
+    // open the log file
+    log = fopen("/home/ap_log/ap_system.log" ,"a");
+    if(!log){
+        printf("log file open fail\n");
+        return ;
+    }
+
+    fprintf(log,"%s\n","DNS를 변경");
+    
+    fclose(log);
+
+    return ;
+}
+
 int change_DNS(char DNS[MAX] , char sub_DNS[MAX]){
     
     FILE * origin; // orgin file
@@ -39,13 +56,21 @@ int change_DNS(char DNS[MAX] , char sub_DNS[MAX]){
         }
     }
 
+    // close the file
+    fclose(origin);
+    fclose(bak);
+
     return 0;
 }
 
 int main( int argc , char * argv[] ){
     
+    // change DNS address
     change_DNS( argv[1] ,argv[2] );
     
+    // print log
+    log_print();
+
     return 0;
 }
 

@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # make interfaces initial bakup file
-sudo cp /etc/network/interfaces /etc/initial_bakup/interfaces.inbak
+sudo cp /etc/network/interfaces /home/initial_bakup/interfaces.inbak
 
 # make dnsmasq.conf initial bakup file
-sudo cp /etc/dnsmasq.conf /etc/initial_bakup/dnsmasq_conf.inbak
+sudo cp /etc/dnsmasq.conf /home/initial_bakup/dnsmasq_conf.inbak
 
 # make hostapd.conf initial bakup file
-sudo cp /etc/hostapd/hostapd.conf /etc/initial_bakup/hostapd_conf.inbak
+sudo cp /etc/hostapd/hostapd.conf /home/initial_bakup/hostapd_conf.inbak
