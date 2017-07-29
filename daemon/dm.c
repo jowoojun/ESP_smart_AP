@@ -263,43 +263,61 @@ char *readFile(char *filename, int *fileSize){
 // Handle signal
 void signalhandler(int signal){
     int size; // the size of the JSON
-    char *file = readFile("ex.json", &size); // file is the varialbe of JSON
-    if(file == NULL){
-        return ;
-    }
+    char *file;
 
     // initialize json varialbe
     JSON json = {0, };
-
-    // parsing JSON file
-    parseJSON(file, size, &json);
-
-    // print JSON content
-    printf("%s : %s\n", json.tokens[0].string, getString(&json, json.tokens[0].string));
-    printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
-    printf("%s : %f\n", json.tokens[4].string, getNumber(&json, json.tokens[4].string));
-    printf("\n");
-    printf("%s : \n", json.tokens[6].string);
-    int lists = getArrayCount(&json, json.tokens[6].string);
     
-    int i;
-    for(i = 0; i < lists; i++){
-        printf("  %s\n", getArrayString(&json, json.tokens[6].string, i));
-    }
+    if(signal == SIGUSR1){
+        file = readFile("ex.json", &size); // file is the varialbe of JSON
+        if(file == NULL){
+            return ;
+        }
+
+        // parsing JSON file
+        parseJSON(file, size, &json);
+
+        // print JSON content
+        printf("%s : %s\n", json.tokens[0].string, getString(&json, json.tokens[0].string));
+        printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
+        printf("%s : %f\n", json.tokens[4].string, getNumber(&json, json.tokens[4].string));
+        printf("%s : \n", json.tokens[6].string);
+
+        int lists = getArrayCount(&json, json.tokens[6].string);
+        
+        int i;
+        for(i = 0; i < lists; i++){
+            printf("  %s\n", getArrayString(&json, json.tokens[6].string, i));
+        }
+        printf("\n");
+   }else if(signal == SIGUSR2){
+       file = readFile("exam.json", &size); // file is the varialbe of JSON
+       if(file == NULL){
+           return ;
+       }
+
+       // parsing JSON file
+       parseJSON(file, size, &json);
+       printf("%s : %s\n", json.tokens[0].string, getString(&json, json.tokens[0].string));
+       printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
+       printf("%s : %f\n", json.tokens[4].string, getNumber(&json, json.tokens[4].string));
+       printf("\n");
+   }
 
 
-    // release json
-    freeJSON(&json);
-    // release file
-    free(file);
+   // release json
+   freeJSON(&json);
 
-    return ;
+   // release file
+   free(file);
 
+   return ;
 }
 
 int main(void){
     while(1){
         signal( SIGUSR1 , signalhandler );
+        signal( SIGUSR2 , signalhandler);
     }
 }
 
