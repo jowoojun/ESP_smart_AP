@@ -48,10 +48,10 @@ int main(void){
             strcpy(str,"iface wlan0 inet");
             strcat(str," static\n");
             fprintf(bak,str);
-            fprintf(bak, "address \n");
-            fprintf(bak, "netmask \n");
-            fprintf(bak, "gateway \n");
-            fprintf(bak, "dns-nameservers \n");
+            fprintf(bak, "\taddress\n");
+            fprintf(bak, "\tnetmask\n");
+            fprintf(bak, "\tgateway\n");
+            fprintf(bak, "\tdns-nameservers\n");
             break;
 
         }else {

@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","블랙리스트를 설정하여 차단");
+    fprintf(log,"%s\n","게이트 웨이 변경");
     
     fclose(log);
 
@@ -42,7 +42,7 @@ int change_gateway(char new_gateway[MAX]){
 
     while( fgets(str , MAX , origin) != NULL ){
         
-        if( strncmp("gateway ", str, 8) == 0 ){
+        if( strncmp("\tgateway", str, strlen("\tgateway") ) == 0 ){
             
             // add new subnet
             strcpy(str, "\tgateway ");

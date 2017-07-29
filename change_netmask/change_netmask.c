@@ -45,7 +45,7 @@ int change_netmask(char new_netmask[MAX]){
 
     while( fgets(str , MAX , origin) != NULL ){
         
-        if( strncmp("netmask ", str, 8) == 0 ){
+        if( strncmp("\tnetmask", str,strlen("\nnetmask") ) == 0 ){
             
             // add new subnet
             strcpy(str, "\tnetmask ");

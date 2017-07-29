@@ -45,7 +45,7 @@ int change_interface(char new_ip[MAX]){
 
     while( fgets(str , MAX , origin) != NULL ){
 
-        if( strncmp( "address " , str, 8) == 0 ){
+        if( strncmp( "\taddress" , str,strlen("\taddress")) == 0 ){
 
             // add new ip address
             strcpy(str , "\taddress ");
@@ -115,5 +115,6 @@ int main( int argc , char * argv[] ){
 
     // print log
     log_print();
+
     return 0;
 }

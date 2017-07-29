@@ -42,7 +42,7 @@ int change_DNS(char DNS[MAX] , char sub_DNS[MAX]){
 
     while( fgets(str , MAX , origin) != NULL ){
         
-        if( strncmp("dns-nameservers ", str, 16) == 0 ){
+        if( strncmp("\tdns-nameservers", str, strlen("\tdns-nameservers") ) == 0 ){
             
             // add new subnet
             strcpy(str, "\tdns-nameservers ");
