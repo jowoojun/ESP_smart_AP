@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","dhcp-range를 설정하였습니다");
+    fprintf(log,"%s\n","\"dhcp-range설정\"");
     
     fclose(log);
 

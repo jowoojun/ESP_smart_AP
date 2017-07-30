@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","DNS를 변경");
+    fprintf(log,"%s\n","\"DNS변경\"");
     
     fclose(log);
 

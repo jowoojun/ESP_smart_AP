@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","채널을 변경");
+    fprintf(log,"%s\n","\"채널변경\"");
     
     fclose(log);
 

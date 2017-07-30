@@ -15,7 +15,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","블랙리스트를 설정하여 차단");
+    fprintf(log,"%s\n","\"넷마스크변경\"");
 
     fclose(log);
 
@@ -67,7 +67,7 @@ int change_netmask(char new_netmask[MAX]){
 int main( int argc , char * argv[] ){
     
     change_netmask( argv[1] );
-    
+    log_print();    
     return 0;
 }
 

@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","ssid 변경");
+    fprintf(log,"%s\n","\"와이파이이름변경\"");
 
     fclose(log);
 

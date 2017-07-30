@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","유고ip를 고정ip로 변경");
+    fprintf(log,"%s\n","\"유동ip->고정ip변경\"");
 
     fclose(log);
 

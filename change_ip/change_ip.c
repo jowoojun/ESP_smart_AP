@@ -14,7 +14,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","ip를 변경");
+    fprintf(log,"%s\n","\"ip변경\"");
 
     fclose(log);
 

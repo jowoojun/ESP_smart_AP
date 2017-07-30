@@ -14,7 +14,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","비멀번호 변경");
+    fprintf(log,"%s\n","\"비멀번호변경\"");
 
     fclose(log);
 

@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","게이트 웨이 변경");
+    fprintf(log,"%s\n","\"게이트웨이변경\"");
     
     fclose(log);
 

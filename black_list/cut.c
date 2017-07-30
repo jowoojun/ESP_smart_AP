@@ -13,7 +13,7 @@ void log_print(){
         return ;
     }
 
-    fprintf(log,"%s\n","블랙리스트를 설정하여 차단");
+    fprintf(log,"%s\n","\"블랙리스트설정-차단\"");
     
     fclose(log);
 
