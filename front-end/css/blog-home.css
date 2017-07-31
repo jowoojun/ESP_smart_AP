@@ -16,7 +16,7 @@ footer {
     margin: 30px 0;
 }
 
-.save_config{
+.save_config, .update_config{
   float: right;
 }
 
@@ -24,6 +24,27 @@ footer {
   margin-bottom: 10px;
 }
 
+.log_config{
+  width: 100%
+  margin-bottom: 20px;
+}
+.twin_config{
+  margin-top: 80px;
+}
+.twin_config div{
+  margin-bottom: 50px;
+}
+.add_email{
+ width: 90px;
+ height: 30px;
+}
+.update_config{
+  width: 130px;
+  height: 50px;
+}
+.port_forwarding_config td:nth-child(3){
+  padding-left: 30px;
+}
 .tabcontent.current{
   display: block;
 }
@@ -41,12 +62,20 @@ footer {
 }
 .menu ul{
   background-color: #eee;
+  list-style: none;
+  padding-left: 0px;
+  text-align: center;
+  position: absolute;
+  z-index: 999;
   border-bottom-left-radius: : 6px;
   border-bottom-right-radius:  6px;
 }
 
+
 .menu ul li{
   cursor: pointer;
+  padding: 10px;
+  margin: 4px;
 }
 
 .ip_field,
@@ -58,6 +87,52 @@ footer {
   display: none;
 }
 
-#mac_blacklist{
+#mac_blacklist,#word_list{
   width:100%;
+}
+
+#search_area{
+  height: 80%;
+}
+
+div#search_area p{
+  padding-left: 30px;
+  margin-top: 190px;
+}
+
+#searchbox{
+  width:170px;
+}
+
+.wl{
+  margin-left: 20px;
+}
+
+.bs{
+  padding-left: 80px;
+  padding-bottom: 10px;
+}
+
+#days,
+#time_range{
+  float:left;
+  padding-right: 15px;
+}
+
+#days > table{
+  padding-top: 10px;
+}
+#time_range{
+  background-color: pink;
+}
+
+#bs_cat{
+  padding-left: 80px;
+}
+
+#blacklist>div>label{
+  min-height: 1px;
+  padding:15px;
+  float: left;
+  width: 66.66666667%;
 }

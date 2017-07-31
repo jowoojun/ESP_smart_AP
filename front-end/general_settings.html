@@ -54,7 +54,7 @@
                         외부 IP
                       </th>
                       <td>
-                        192.168.82.200
+
                       </td>
                     </tr>
                     <tr>
@@ -62,7 +62,7 @@
                         기본 DNS 서버
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+
                       </td>
                     </tr>
                     <tr>
@@ -70,7 +70,7 @@
                         보조 DNS 서버
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+
                       </td>
                     </tr>
                     <tr>
@@ -78,7 +78,7 @@
                         GATEWAY
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+
                       </td>
                     </tr>
                     <tr>
@@ -86,7 +86,7 @@
                         DHCP 시작 IP
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+
                       </td>
                     </tr>
                     <tr>
@@ -94,7 +94,7 @@
                         DHCP 종료 IP
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+
                       </td>
                     </tr>
                     <tr>
@@ -102,7 +102,7 @@
                         MAC 주소
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+
                       </td>
                     </tr>
                     <tr>
@@ -110,12 +110,14 @@
                         원격관리 정보
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+
                       </td>
                     </tr>
                   </table>
                 </div>
+                <input type=submit class="btn btn-default save_config" value="적용">
             </div>
+
 
             <div id="admin_setting" class="col-md-8 well tabcontent">
                 <h1 class="page-header">
@@ -128,7 +130,7 @@
                         SSID변경
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+                        <input name="" type="text" required/>
                       </td>
                     </tr>
                     <tr>
@@ -136,7 +138,7 @@
                         비밀번호 변경
                       </th>
                       <td>
-                        192.168.82.200
+                        <input name="" type="password" required/>
                       </td>
                     </tr>
                     <tr>
@@ -144,7 +146,7 @@
                         최대 접속 제한
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+                        <input name="" type="text" required/>
                       </td>
                     </tr>
                     <tr>
@@ -152,11 +154,11 @@
                         비밀번호 횟수제한
                       </th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+                        <input name="" type="text" required/>
                       </td>
                     </tr>
                   </table>
-                  <input type=submit class="btn btn-default save_config" value="저장">
+                  <input type=submit class="btn btn-default save_config" value="적용">
                 </div>
                 <hr />
                 <h1 class="page-header">
@@ -174,24 +176,17 @@
                 <div class="well tabcontent current" id="internet_info_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>SSID : 무선 랜을 통해 전송되는 패킷들의 각 헤더에 덧붙여지는 32byte 길이의 고유 식별자</li>
-                        <li>외부 IP : </li>
-                        <li>기본 DNS 서버 :</li>
-                        <li>보조 DNS 서버 :</li>
-                        <li>GATEWAY : </li>
-                        <li>DHCP 시작 IP :</li>
-                        <li>DHCP 종료 IP :</li>
-                        <li>MAC 주소 :</li>
-                        <li>원격관리 :</li>
+                        <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
+                           네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다.
+                           이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.
+                           IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다.</li>
                       </ul>
                 </div>
 
                 <div class="well tabcontent" id="admin_setting_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>SSID :</li>
-                        <li>비밀번호 :</li>
-                        <li>최대접속제한 :</li>
+                        <li>SSID : 무선 랜을 통해 전송되는 패킷들의 각 헤더에 덧붙여지는 32byte 길이의 고유 식별자</li>
                       </ul>
                 </div>
             </div>
