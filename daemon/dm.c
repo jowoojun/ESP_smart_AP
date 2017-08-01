@@ -284,21 +284,6 @@ void signalhandler(int signal){
         }else{
             printf("Error\n");
         }
-        /*
-        // print JSON content
-        printf("%s : %s\n", json.tokens[0].string, getString(&json, json.tokens[0].string));
-        printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
-        printf("%s : %f\n", json.tokens[4].string, getNumber(&json, json.tokens[4].string));
-        printf("%s : \n", json.tokens[6].string);
-
-        int lists = getArrayCount(&json, json.tokens[6].string);
-        
-        int i;
-        for(i = 0; i < lists; i++){
-            printf("  %s\n", getArrayString(&json, json.tokens[6].string, i));
-        }
-        printf("\n");
-        */
    }else if(signal == SIGUSR2){
        file = readFile("ex.json", &size); // file is the varialbe of JSON
        if(file == NULL){
@@ -322,7 +307,6 @@ void signalhandler(int signal){
        }
        printf("\n");
    }
-
 
    // release json
    freeJSON(&json);
