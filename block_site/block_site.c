@@ -1,51 +1,11 @@
 #include <stdio.h>
-#include <string.h>
-#define MAX 100
-int block(char ip_add[MAX]){
-    
-    FILE * filter;
-    char str[MAX];
+#include <stdlib.h>
 
-    filter = fopen("/home/pi/changgunLEE/esp_smart_ap/block_site/filter","r");
-    if(!filter){
-        printf("can't open the filter\n");
-    }
+// 소켓을 받아온다
 
-    while( fscanf(filter,"%s",str) != EOF ){
-       if( strcmp(str,ip_add) == 0 ){
-            // 차단된 사이트
-            return 1;
-        }
-        
-    }
+// 소켓을 받아오면 인터넷 서비스를 잠깐 중단시킨다
 
-    return 0;
-}
+// 소켓 안에 있는 ipaddress를 분석해서 필터링 해준다
 
-void sitefiter(char ip_add[MAX]){
-    FILE * ip;
+// 소켓을 반환 해준다
 
-    //open ip
-    ip = fopen("/home/pi/changgunLEE/esp_smart_ap/block_site/ip_address","w");
-    if(!ip){
-        printf("can't open the ip\n");
-    }
-    
-    
-    // block site
-    if( block(ip_add)){
-        // 사이트 블록
-        fprintf(ip,"차단된 사이트를 다른사이트로 넘겨준다");
-    }else{
-        // 사이트 블록 X
-        fprintf(ip,"%s",ip_add);
-    }
-
-    return ;
-}
-
-
-int main(int argc, char *argv[]){
-    sitefiter(argv[1]);
-    return 0; 
-}
