@@ -173,16 +173,17 @@
                     <input type=button class="btn btn-default btn-lg btn-block sys_config" value="자동종료 설정">
                 </div>
             </div>
-<!--dasfdsafasdf -->
+<!--차단페이지 -->
             <div id="block_setting" class="col-md-8 well tabcontent">
                 <h1 class="page-header">
                     <small>차단/허용 페이지 설정</small>
                 </h1>
-                <div class="bs">
-                  <select name="block_on_off">
-                    <option value="on">ON</option>
-                    <option value="off" id="block_off">OFF</option>
-                  </select>
+                <div class="onoffswitch">
+                  <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                  <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                  </label>
                 </div>
                 <div>
                  
