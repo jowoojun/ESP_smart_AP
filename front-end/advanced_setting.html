@@ -58,7 +58,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 well tabcontent current" id="dynamic_ip"> <!--current-->
+            <div class="col-md-8 well tabcontent" id="dynamic_ip"> <!--current-->
                 <h1 class="page-header">
                     <small>인터넷 연결설정</small>
                 </h1>
@@ -67,17 +67,18 @@
                     <tr>
                       <th>연결방식</th>
                       <td>
-                        <label><input type="radio" name="con_type" value="ip_dynamic" checked/>유동IP</label>
-                        <label><input type="radio" name="con_type" value="ip_static"/>고정IP</label>
+                        <input type="radio" name="con_type" value="ip_dynamic" checked/>유동IP
+                        <input type="radio" name="con_type" value="ip_static"/>고정IP
                       </td>
                     </tr>
                   </table>
+
                   <table class="table table-bordered" id="ip_dynamic_cont">
                     <tr>
                       <th>DNS 서버설정</th>
                       <td>
-                        <label><input type="radio" name="dns_server" value="dns_dynamic" checked/>자동</label>
-                        <label><input type="radio" name="dns_server" value="dns_static"/>수동</label>
+                        <input type="radio" name="dns_server" value="dns_dynamic" checked/>자동
+                        <input type="radio" name="dns_server" value="dns_static"/>수동
                       </td>
                     </tr>
                     <tr>
@@ -172,9 +173,6 @@
                   </tr>
               </table>
             </div>
-            <div class="col-md-12">
-              <input type=submit class="btn btn-default save_config" value="적용">
-            </div>
 
               <h1 class="page-header">
                     <small>내부 네트워크 설정</small>
@@ -191,6 +189,8 @@
                         <input class="ip_field" name="ip_inet3" type="text" value="" maxlength="3" required/>.
                         <input class="ip_field" name="ip_inet4" type="text" value="" maxlength="3" required/>
                       </td>
+                    </tr>
+                    <tr>
                       <th>
                         서브넷마스크
                       </th>
@@ -206,10 +206,11 @@
                         DHCP 사용
                       </th>
                       <td>
-                        <label><input type="radio" name="dhcp" value="use" checked/>사용</label>
-                        <label><input type="radio" name="dhcp" value="stop"/>중지</label>
+                        <input type="radio" name="dhcp" value="use" checked/>사용
+                        <input type="radio" name="dhcp" value="stop"/>중지
                       </td>
-
+                    </tr>
+                    <tr>
                       <th>
                         DHCP 주소
                       </th>
@@ -226,16 +227,13 @@
                     </tr>
                   </table>
                 </div>
-                <div class="col-md-12">
-                  <input type=submit class="btn btn-default save_config" value="적용">
-                </div>
             </div>
 
             <div class="col-md-8 well tabcontent" id="block_word">
                 <h1 class="page-header">
                     <small>특정단어차단</small>
                 </h1>
-                <div class="col-md-6 wl">
+                <div class="col-md-6">
                   <p>
                     <select name="word_list" size="20" id="word_list" multiple>
                       <option value="word1">word1</option>
@@ -255,105 +253,46 @@
                     <button name="btnAdd" class="btn btn-default" id="add_word"/>추가</button>
                   </p>
                 </div>
-                <div class="col-md-12">
-                  <input type=submit class="btn btn-default save_config" value="적용">
-                </div>
-
             </div>
             <div class="col-md-8 well tabcontent" id="block_site">
                 <h1 class="page-header">
                     <small>유해사이트 차단</small>
                 </h1>
-                <div class="bs">
+                <div>
                   <select name="block_on_off">
                     <option value="on">ON</option>
-                    <option value="off" id="block_off">OFF</option>
+                    <option value="off">OFF</option>
                   </select>
                   <button class="btn btn-default" id="chk_all"/>전체선택</button>
                   <button class="btn btn-default" id="chk_not_all"/>전체해제</button>
                 </div>
 
                 <div>
-                  <table class="col-md-12" id="bs_cat">
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="mal_site_category" value="porn"/> 불법 성매매,음란 관련 정보</label>
-                      </td>
-                      <td>
-                        <label><input type="checkbox" name="mal_site_category" value="food"/> 불법 식,의약품 관련 정보 </label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="mal_site_category" value="gambling"/> 불법 도박 관련 정보</label>
-                      </td>
-                      <td>
-                        <label><input type="checkbox" name="mal_site_category" value="malsite"/> 악성 사이트(해킹위험) 관련 정보 </label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="mal_site_category" value="violent"/> 불법 조직,폭력 관련 정보</label>
-                      </td>
-                      <td>
-                        <label><input type="checkbox" name="mal_site_category" value="etc"/> 기타 불법,유해 내용</label>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-12">
-                  <input type=submit class="btn btn-default save_config" value="적용">
+                  <input type="checkbox" name="mal_site_category" value="porn"/> 불법 성매매,음란 관련 정보
+                  <input type="checkbox" name="mal_site_category" value="food"/> 불법 식,의약품 관련 정보 <br />
+                  <input type="checkbox" name="mal_site_category" value="gambling"/> 불법 도박 관련 정보
+                  <input type="checkbox" name="mal_site_category" value="malsite"/> 악성 사이트(해킹위험) 관련 정보 <br />
+                  <input type="checkbox" name="mal_site_category" value="violent"/> 불법 조직,폭력 관련 정보
+                  <input type="checkbox" name="mal_site_category" value="etc"/> 기타 불법,유해 내용
                 </div>
 
 
                 <h1 class="page-header">
                     <small>예약 차단</small>
                 </h1>
-                <div class="bs" id="days">
+                <div>
                   <button class="btn btn-default" id="chk_all_day"/>전체선택</button>
                   <button class="btn btn-default" id="chk_not_all_day"/>전체해제</button><br />
-                  <table>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="day" value="sun"/> 일 </label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="day" value="mon"/> 월 </label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="day" value="tues"/> 화</label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="day" value="wed"/> 수</label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="day" value="thu"/> 목</label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="day" value="fri"/> 금</label>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label><input type="checkbox" name="day" value="sat"/> 토</label>
-                      </td>
-                    </tr>
-                  </table>
-
+                  <input type="checkbox" name="day" value="sun"/> 일 <br />
+                  <input type="checkbox" name="day" value="mon"/> 월 <br />
+                  <input type="checkbox" name="day" value="tues"/> 화 <br />
+                  <input type="checkbox" name="day" value="wed"/> 수 <br />
+                  <input type="checkbox" name="day" value="thu"/> 목 <br />
+                  <input type="checkbox" name="day" value="fri"/> 금 <br />
+                  <input type="checkbox" name="day" value="sat"/> 토
                 </div>
 
-                <div class="bs" id="time-range">
+                <div id="time-range">
                   시작 <select name="time_start">
                     <option value="ts0">0시</option>
                     <option value="ts1">1시</option>
@@ -407,11 +346,9 @@
                     <option value="ts24">24시</option>
                   </select>
                 </div>
-                <div class="col-md-12">
-                  <input type=submit class="btn btn-default save_config" value="적용">
-                </div>
+
             </div>
-            <div class="col-md-8 well tabcontent" id="blacklist">
+            <div class="col-md-8 well tabcontent current" id="blacklist">
                 <h1 class="page-header">
                     <small>블랙리스트</small>
                 </h1>
@@ -419,6 +356,7 @@
                   <label><input type="radio" name="blacklist_option" value="all_accept" checked/>모두 허용</label>
                   <label><input type="radio" name="blacklist_option" value="select_accept" />등록된 주소만 허용(whitelist)</label>
                   <label><input type="radio" name="blacklist_option" value="select_drop" />등록된 주소만 차단(blacklist)</label>
+                  <input type="submit" class="btn btn-default save_config" value="적용"/>
                 </div>
                 <div class="col-md-6">
                   <p>
@@ -441,150 +379,12 @@
                     <button class="btn btn-default save_config" id="mac_del">삭제</button>
                   </p>
                 </div>
-                <div class="col-md-12">
-                  <input type=submit class="btn btn-default save_config" value="적용">
-                </div>
             </div>
 
             <div class="col-md-8 well tabcontent" id="port_forwarding">
                 <h1 class="page-header">
                     <small>포트포워딩</small>
                 </h1>
-                <small>The maximum rule count is 10</small>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                      <tr>
-                        <th>순위</th>
-                        <th>사용자규칙</th>
-                        <th>내부IP</th>
-                        <th>외부포트</th>
-                        <th>내부포트</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                    <table class="port_forwarding_config">
-                      <tr>
-                        <td>규칙이름:</td>
-                        <td>
-                          <input type="text" name="rule_name" />
-                        </td>
-                        <td>
-                          <select>
-                              <option>포트포워딩 사용자정의</option>
-                              <option>HTTP</option>
-                              <option>HTTPS</option>
-                              <option>POP3</option>
-                              <option>FTP</option>
-                              <option>SMTP</option>
-                              <option>DNS</option>
-                              <option>TELNET</option>
-                            </select>
-                        </td>
-                        <td>
-                          <input type="checkbox" name="inactive"/>비활성화
-                        </td>
-                        </tr>
-                        <tr>
-                          <td>내부 IP주소:</td>
-                          <td>
-                             <input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required />.
-                             <input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required />.
-                             <input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required />.
-                             <input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required />
-                          </td>
-                          <td>
-                            외부포트: &nbsp;<input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required /> &nbsp;-&nbsp;
-                               <input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required />
-                          </td>
-                          <td>
-                            순위: <input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>프로토콜:</td>
-                          <td>
-                            <select>
-                              <option>TCP</option>
-                              <option>UDP</option>
-                            </select>
-                          </td>
-                          <td>
-                            내부포트: &nbsp;<input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required /> &nbsp;-&nbsp;
-                               <input class="ip_field " name="inner_ip" type="text" value="" maxlength="3" required/>
-                          </td>
-                        </tr>
-                      </table>
-                      <input type=submit class="btn btn-default save_config" value="적용">
-                </div>
             </div>
             <div class="col-md-8 well tabcontent" id="twin_ip">
                 <h1 class="page-header">
@@ -592,15 +392,14 @@
                 </h1>
                 <div class="twin_config">
                   <div>
-                    <label><input type="radio" name="con_type_3" checked/>사용하지 않음</label>
+                    <input type="radio" name="con_type_3" checked/>사용하지 않음
                   </div>
                   <div>
-                    <label><input type="radio" name="con_type_3"/>Twin IP(지정된 mac주소의 PC가 공인IP를 사용하도록 합니다.)</label>
+                    <input type="radio" name="con_type_3"/>Twin IP(지정된 mac주소의 PC가 공인IP를 사용하도록 합니다.)
                   </div>
                   <div>
-                    <label><input type="radio" name="con_type_3"/>DMZ(지정된 내부 ip주소의 PC로 모든 포트를 개방합니다. 포트포워딩에 설정된 포트 제외.)</label>
+                    <input type="radio" name="con_type_3"/>DMZ(지정된 내부 ip주소의 PC로 모든 포트를 개방합니다. 포트포워딩에 설정된 포트 제외.)
                   </div>
-                  <input type=submit class="btn btn-default save_config" value="적용">
                 </div>
             </div>
 
@@ -656,7 +455,7 @@
                       </td>
                     </tr>
                   </table>
-                  <input type=submit class="btn btn-default save_config" value="적용">
+                  <input type=submit class="btn btn-default save_config" value="저장">
               </div>
             </div>
             <div class="col-md-8 well tabcontent" id="firmware">
@@ -684,59 +483,58 @@
                 <div class="well tabcontent current" id="dynamic_ip_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
-                          이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.</li>
-                        <li>유동IP : 컴퓨터에 고정적으로 부여된 IP로 한번 부여되면 IP를 반납하기 전까지는 다른 장비에 부여할 수 없는 IP 주소.</li>
-                        <li>고정IP : 장비에 고정적으로 IP를 부여하지 않고 컴퓨터를 사용할 때 남아 있는 IP 중에서 돌아가면서 부여하는 IP.</li>
+                        <li>유동IP 설명</li>
+                      </ul>
+                </div>
+                <div class="well tabcontent" id="static_ip_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>고정IP 설명</li>
                       </ul>
                 </div>
 
                 <div class="well tabcontent" id="block_word_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>텍스트 필드에 단어를 입력하여 리스트에 추가하면 해당 단어가 쓰인 웹 사이트 접속을 차단합니다.</li>
+                        <li>특정단어 차단 설명</li>
                       </ul>
                 </div>
                 <div class="well tabcontent" id="block_site_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>6가지 카테고리에 포함된 웹 접속을 차단할 수 있습니다. 시간을 설정하여 인터넷 사용을 제한할 수 있습니다.</li>
+                        <li>유해사이트 차단 설명</li>
                       </ul>
                 </div>
 
                 <div class="well tabcontent" id="blacklist_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>모두 허용 : 모든 기기가 공유기를 통해 인터넷을 사용할 수 있도록 합니다.</li>
-                        <li>등록된 주소만 허용(whitelist) : 리스트에 등록된 맥주소를 가진 기기만 인터넷을 사용할 수 있고,
-                        등록되지 않은 기기는 공유기를 통한 인터넷 사용을 제한합니다.</li>
-                        <li>등록된 주소 차단(blacklist) : 리스트에 등록된 맥주소를 가진 기기의 인터넷 사용을 제한합니다.</li>
+                        <li>블랙리스트 설명</li>
                       </ul>
                 </div>
 
                 <div class="well tabcontent" id="port_forwarding_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>포트포워딩 : 공유기에서 특정 통신포트를 개방하여 통신이 되도록 하는것 입니다. 등록시 설정한 IP주소와 포트로 외부통신이 가능하게 해줍니다.</li>
+                        <li>포트포워딩 설명</li>
                       </ul>
                 </div>
                 <div class="well tabcontent" id="twin_ip_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>Twin IP : 공유기와 유선(무선)으로 연결된 기기중 MAC Address를 기준으로 공인 IP 주소를 직접적으로 부여하는 기능입니다.</li>
-                        <li>DMZ : 내부 IP중 하나의 IP를 지정하여 공유기에 사용하는 공인IP의 모든 포트를 지정된 IP주소로 연결하는 기능입니다.</li>
+                        <li >트윈IP 설명</li>
                       </ul>
                 </div>
                 <div class="well tabcontent" id="system_log_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>시스템로그 : 장비 및 네트워크 운영 과정에서 발생하는 모든 내용들이 발생시간과 함께 기록된 자료입니다. </li>
+                        <li>시스템로그 설명</li>
                       </ul>
                 </div>
                 <div class="well tabcontent" id="firmware_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li >펌웨어 버전 : 공유기의 시스템적인 버전이며 최신 버전으로 업데이트를 통해 개선된 서비스를 이용할 수 있습니다. </li>
+                        <li >펌웨어 설명</li>
                       </ul>
                 </div>
             </div>
