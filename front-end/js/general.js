@@ -8,42 +8,63 @@ $(function(){
       $('#'+active_tab+'_desc').addClass('current');
     })
 });
+
 $(function(){
-  $("#mac_add").click(function(){
-    //mac주소 만들기
-    function full_mac(){
-      var full_mac="";
-      for(i=1;i<6;i++){
-        full_mac+=$("#black_mac"+i).val()+"-";
+  $("#move_to_drop").click(function(){
+    $("#white_block option:selected").each(function(){
+      $(this).remove().appendTo("#black_block");
+    });
+  });
+
+  $("#move_to_allow").click(function(){
+    $("#black_block option:selected").each(function(){
+      $(this).remove().appendTo("#white_block");
+    });
+  });
+});
+
+
+$(function(){
+  $("#time_add").click(function(){
+    //날짜시간 만들기
+    var day = [];
+    var days = "";
+    var day_checked = $("input:checkbox[name='day']");
+    for(var i=0;i<day_checked.length;i++){
+      if(day_checked[i].checked){
+        day.push(day_checked[i].value);
       }
-      full_mac+=$("#black_mac6").val();
-      return full_mac;
     }
-    var full_mac=full_mac();
+    for(var i=0;i<day.length;i++){
+      days += day[i]+",";
+    }
+    var ts = $("#time_start option:selected").text();
+    var te = $("#time_end option:selected").text();
+    day_time=days+ts+"-"+te;
 
     //추가하기
-    if($('#mac_blacklist').find("[value='"+full_mac+"']'").length == 0){
-      $('#mac_blacklist').append('<option value="'+full_mac+'">'+full_mac+"</option>");
+    if($('#time_blacklist').find("[value='"+day_time+"']").length == 0){
+      $('#time_blacklist').append('<option value="'+day_time+'">'+day_time+"</option>");
     }else{
-      alert("등록된 MAC주소 입니다.");
+      alert("등록된 날짜,시간 입니다.");
     }
   });
 
   //삭제하기
-  $("#mac_del").click(function(){
-    $('#mac_blacklist option:selected').each( function() {
+  $("#time_del").click(function(){
+    $('#time_blacklist option:selected').each( function() {
         $(this).remove();
     });
   });
 });
 
+
 $(document).ready(function(){
+  $("#timelist_all").click(function(){
+    $("#time_blacklist > option").attr("selected",true);
+  });
 
-	$("#blacklist_all").click(function(){
-	      $("#mac_blacklist > option").attr("selected",true);
-	  });
-
-	  $("#blacklist_not_all").click(function(){
-	    $("#mac_blacklist > option").attr("selected",false);
-	  });
+  $("#timelist_not_all").click(function(){
+    $("#time_blacklist > option").attr("selected",false);
+  });
 });
