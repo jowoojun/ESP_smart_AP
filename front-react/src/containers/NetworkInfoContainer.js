@@ -6,6 +6,11 @@ import {ChangeModeButton} from '../components';
 
 class NetworkInfoContainer extends Component{
 
+    constructor(props){
+
+        super(props);
+    }
+
     render(){
 
         return(
