@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="./js/search_auto/lib/jquery.ajaxQueue.js"></script>
@@ -13,495 +12,223 @@
     <link href="./css/blog-home.css" rel="stylesheet">
     <link href="./css/jquery.autocomplete.css" rel="stylesheet">
     <title>공유기설정</title>
-</head>
+  </head>
 
-<body>
-<form>
-    <div class="container">
+  <body>
+    <form>
+      <div class="container">
         <div class="wrapper">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">고급설정</a>
-        </div>
-     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav tab">
-                    <li class="current" data-tab="internet_info">
-                        <a href="#">인터넷 정보</a>
-                    </li>
-                    <li data-tab="admin_setting">
-                        <a href="#">Admin 설정</a>
-                    </li>
-                    <li data-tab="dynamic_ip">
-                        <a href="#">IP설정</a>
-                    </li>
-                    <li data-tab="system_log">
-                        <a href="#">시스템로그</a>
-                    </li>
-                    <li>
-                        <a href="general_settings.html">Home</a>
-                    </li>
-                </ul>
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#">고급설정</a>
           </div>
-
-        <div class="row">
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav tab">
+              <li class="current" data-tab="internet_info">
+                <a href="#">인터넷 정보</a>
+              </li>
+              <li data-tab="admin_setting">
+                <a href="#">Admin 설정</a>
+              </li>
+              <li data-tab="dynamic_ip">
+                  <a href="#">IP설정</a>
+              </li>
+              <li data-tab="system_log">
+                <a href="#">시스템로그</a>
+              </li>
+              <li>
+                <a href="general_settings.html">Home</a>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
             <div id="internet_info" class="col-md-8 well tabcontent current">
-                <h1 class="page-header">
-                    <small>인터넷 정보</small>
-                </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>
-                        인터넷 연결상태
-                      </th>
-                      <td>
-                        인터넷에 정상적으로 연결됨
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        외부 IP
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        기본 DNS 서버
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        보조 DNS 서버
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        GATEWAY
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        DHCP 시작 IP
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        DHCP 종료 IP
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        MAC 주소
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-            </div>
-
-
-            <div id="admin_setting" class="col-md-8 well tabcontent">
-                <h1 class="page-header">
-                    <small>Admin 설정</small>
-                </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>
-                        SSID변경
-                      </th>
-                      <td>
-                        <input name="" type="text" required/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        비밀번호 변경
-                      </th>
-                      <td>
-                        <input name="" type="password" required/>
-                      </td>
-                    </tr>
-                    <tr>
-                    <tr>
-                      <th>
-                        비밀번호 확인
-                      </th>
-                      <td>
-                        <input name="" type="password" required/>
-                      </td>
-                    </tr>
-                  </table>
-                  <input type=submit class="btn btn-default save_config" value="적용">
-                </div>
-                <hr />
-                <h1 class="page-header">
-                    <small>시스템설정</small>
-                </h1>
-                <div class="col-md-3">
-                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="시스템 재시작">
-                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="초기설정 복원">
-                </div>
-            </div>
-
-
-            <div class="col-md-8 well tabcontent" id="dynamic_ip"> <!--current-->
               <h1 class="page-header">
-                    <small>내부 네트워크 설정</small>
+                <small>인터넷 정보</small>
               </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>
-                        IP 주소
-                      </th>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>인터넷 연결상태</th>
+                    <td>인터넷에 정상적으로 연결됨</td>
+                  </tr>
+                  <tr>
+                    <th>외부 IP</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>기본 DNS 서버</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>보조 DNS 서버</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>GATEWAY</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>DHCP 시작 IP</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>DHCP 종료 IP</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>MAC 주소</th>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="admin_setting" class="col-md-8 well tabcontent">
+              <h1 class="page-header">
+                <small>Admin 설정</small>
+              </h1>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>SSID변경</th>
+                    <td><input name="" type="text" required/></td>
+                  </tr>
+                  <tr>
+                    <th>비밀번호 변경</th>
+                    <td><input name="" type="password" required/></td>
+                  </tr>
+                  <tr>
+                    <th>비밀번호 확인</th>
+                    <td><input name="" type="password" required/></td>
+                  </tr>
+                </table>
+                <input type=submit class="btn btn-default save_config" value="적용">
+              </div>
+              <hr />
+              <h1 class="page-header">
+                <small>시스템설정</small>
+              </h1>
+              <div class="col-md-3">
+                <input type=button class="btn btn-default btn-lg btn-block sys_config" value="시스템 재시작">
+                <input type=button class="btn btn-default btn-lg btn-block sys_config" value="초기설정 복원">
+              </div>
+            </div>
+            <div class="col-md-8 well tabcontent" id="dynamic_ip">
+              <h1 class="page-header">
+                <small>내부 네트워크 설정</small>
+              </h1>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>IP 주소</th>
                       <td>
                         <input class="ip_field" name="ip_inet1" type="text" value="" maxlength="3" required/>.
                         <input class="ip_field" name="ip_inet2" type="text" value="" maxlength="3" required/>.
                         <input class="ip_field" name="ip_inet3" type="text" value="" maxlength="3" required/>.
                         <input class="ip_field" name="ip_inet4" type="text" value="" maxlength="3" required/>
                       </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        서브넷마스크
-                      </th>
-                      <td>
-                        <input class="ip_field" name="subnet_inet1" type="text" value="" maxlength="3" required/>.
-                        <input class="ip_field" name="subnet_inet2" type="text" value="" maxlength="3" required/>.
-                        <input class="ip_field" name="subnet_inet3" type="text" value="" maxlength="3" required/>.
-                        <input class="ip_field" name="subnet_inet4" type="text" value="" maxlength="3" required/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        DHCP 주소
-                      </th>
-                      <td>
-                        <input class="ip_field dhcp_range" name="start_dhcp1" type="text" value="" maxlength="3" required />.
-                        <input class="ip_field dhcp_range" name="start_dhcp2" type="text" value="" maxlength="3" required />.
-                        <input class="ip_field dhcp_range" name="start_dhcp3" type="text" value="" maxlength="3" required />.
-                        <input class="ip_field dhcp_range" name="start_dhcp4" type="text" value="" maxlength="3" required /> ~
-                        <input class="ip_field dhcp_range" name="end_dhcp1" type="text" value="" maxlength="3" required />.
-                        <input class="ip_field dhcp_range" name="end_dhcp2" type="text" value="" maxlength="3" required />.
-                        <input class="ip_field dhcp_range" name="end_dhcp3" type="text" value="" maxlength="3" required />.
-                        <input class="ip_field dhcp_range" name="end_dhcp4" type="text" value="" maxlength="3" required />
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-            </div>
-            <div class="col-md-8 well tabcontent" id="block_site">
-                <h1 class="page-header">
-                    <small>유해사이트 차단</small>
-                </h1>
-                <div>
-                  <select name="block_on_off">
-                    <option value="on">ON</option>
-                    <option value="off">OFF</option>
-                  </select>
-                  <button class="btn btn-default" id="chk_all"/>전체선택</button>
-                  <button class="btn btn-default" id="chk_not_all"/>전체해제</button>
-                </div>
-
-                <div>
-                  <input type="checkbox" name="mal_site_category" value="porn"/> 불법 성매매,음란 관련 정보
-                  <input type="checkbox" name="mal_site_category" value="food"/> 불법 식,의약품 관련 정보 <br />
-                  <input type="checkbox" name="mal_site_category" value="gambling"/> 불법 도박 관련 정보
-                  <input type="checkbox" name="mal_site_category" value="malsite"/> 악성 사이트(해킹위험) 관련 정보 <br />
-                  <input type="checkbox" name="mal_site_category" value="violent"/> 불법 조직,폭력 관련 정보
-                  <input type="checkbox" name="mal_site_category" value="etc"/> 기타 불법,유해 내용
-                </div>
-
-
-                <h1 class="page-header">
-                    <small>예약 차단</small>
-                </h1>
-                <div>
-                  <button class="btn btn-default" id="chk_all_day"/>전체선택</button>
-                  <button class="btn btn-default" id="chk_not_all_day"/>전체해제</button><br />
-                  <input type="checkbox" name="day" value="sun"/> 일 <br />
-                  <input type="checkbox" name="day" value="mon"/> 월 <br />
-                  <input type="checkbox" name="day" value="tues"/> 화 <br />
-                  <input type="checkbox" name="day" value="wed"/> 수 <br />
-                  <input type="checkbox" name="day" value="thu"/> 목 <br />
-                  <input type="checkbox" name="day" value="fri"/> 금 <br />
-                  <input type="checkbox" name="day" value="sat"/> 토
-                </div>
-
-                <div id="time-range">
-                  시작 <select name="time_start">
-                    <option value="ts0">0시</option>
-                    <option value="ts1">1시</option>
-                    <option value="ts2">2시</option>
-                    <option value="ts3">3시</option>
-                    <option value="ts4">4시</option>
-                    <option value="ts5">5시</option>
-                    <option value="ts6">6시</option>
-                    <option value="ts7">7시</option>
-                    <option value="ts8">8시</option>
-                    <option value="ts9">9시</option>
-                    <option value="ts10">10시</option>
-                    <option value="ts11">11시</option>
-                    <option value="ts12">12시</option>
-                    <option value="ts13">13시</option>
-                    <option value="ts14">14시</option>
-                    <option value="ts15">15시</option>
-                    <option value="ts16">16시</option>
-                    <option value="ts17">17시</option>
-                    <option value="ts18">18시</option>
-                    <option value="ts19">19시</option>
-                    <option value="ts20">20시</option>
-                    <option value="ts21">21시</option>
-                    <option value="ts22">22시</option>
-                    <option value="ts23">23시</option>
-                  </select> ~ 끝
-                  <select name="time_end">
-                    <option value="ts1">1시</option>
-                    <option value="ts2">2시</option>
-                    <option value="ts3">3시</option>
-                    <option value="ts4">4시</option>
-                    <option value="ts5">5시</option>
-                    <option value="ts6">6시</option>
-                    <option value="ts7">7시</option>
-                    <option value="ts8">8시</option>
-                    <option value="ts9">9시</option>
-                    <option value="ts10">10시</option>
-                    <option value="ts11">11시</option>
-                    <option value="ts12">12시</option>
-                    <option value="ts13">13시</option>
-                    <option value="ts14">14시</option>
-                    <option value="ts15">15시</option>
-                    <option value="ts16">16시</option>
-                    <option value="ts17">17시</option>
-                    <option value="ts18">18시</option>
-                    <option value="ts19">19시</option>
-                    <option value="ts20">20시</option>
-                    <option value="ts21">21시</option>
-                    <option value="ts22">22시</option>
-                    <option value="ts23">23시</option>
-                    <option value="ts24">24시</option>
-                  </select>
-                </div>
-
-            </div>
-            <div class="col-md-8 well tabcontent " id="blacklist">
-                <h1 class="page-header">
-                    <small>블랙리스트</small>
-                </h1>
-                <div>
-                  <label><input type="radio" name="blacklist_option" value="all_accept" checked/>모두 허용</label>
-                  <label><input type="radio" name="blacklist_option" value="select_accept" />등록된 주소만 허용(whitelist)</label>
-                  <label><input type="radio" name="blacklist_option" value="select_drop" />등록된 주소만 차단(blacklist)</label>
-                  <input type="submit" class="btn btn-default save_config" value="적용"/>
-                </div>
-                <div class="col-md-6">
-                  <p>
-                    <input type="text" class="black_mac" name="black_mac1" id="black_mac1" maxlength="2"/> -
-                    <input type="text" class="black_mac" name="black_mac2" id="black_mac2" maxlength="2"/> -
-                    <input type="text" class="black_mac" name="black_mac3" id="black_mac3" maxlength="2"/> -
-                    <input type="text" class="black_mac" name="black_mac4" id="black_mac4" maxlength="2"/> -
-                    <input type="text" class="black_mac" name="black_mac5" id="black_mac5" maxlength="2"/> -
-                    <input type="text" class="black_mac" name="black_mac6" id="black_mac6" maxlength="2"/>
-                    <button class="btn btn-default save_config" id="mac_add">추가</button>
-                  </p>
-                  <p>
-                    <select name="select_box1" size="10" id="mac_blacklist" multiple>
-                      <option value="1-1">1-1</option>
-                      <option value="1-2">1-2</option>
-                      <option value="1-3">1-3</option>
-                    </select>
-                    <button class="btn btn-default" id="blacklist_all"/>전체선택</button>
-                    <button class="btn btn-default" id="blacklist_not_all"/>전체해제</button>
-                    <button class="btn btn-default save_config" id="mac_del">삭제</button>
-                  </p>
-                </div>
-            </div>
-
-            <div class="col-md-8 well tabcontent" id="port_forwarding">
-                <h1 class="page-header">
-                    <small>포트포워딩</small>
-                </h1>
-            </div>
-            <div class="col-md-8 well tabcontent" id="twin_ip">
-                <h1 class="page-header">
-                    <small>트윈IP</small>
-                </h1>
-                <div class="twin_config">
-                  <div>
-                    <input type="radio" name="con_type_3" checked/>사용하지 않음
-                  </div>
-                  <div>
-                    <input type="radio" name="con_type_3"/>Twin IP(지정된 mac주소의 PC가 공인IP를 사용하도록 합니다.)
-                  </div>
-                  <div>
-                    <input type="radio" name="con_type_3"/>DMZ(지정된 내부 ip주소의 PC로 모든 포트를 개방합니다. 포트포워딩에 설정된 포트 제외.)
-                  </div>
-                </div>
-            </div>
-
+                  </tr>
+                  <tr>
+                    <th>서브넷마스크</th>
+                    <td>
+                      <input class="ip_field" name="subnet_inet1" type="text" value="" maxlength="3" required/>.
+                      <input class="ip_field" name="subnet_inet2" type="text" value="" maxlength="3" required/>.
+                      <input class="ip_field" name="subnet_inet3" type="text" value="" maxlength="3" required/>.
+                      <input class="ip_field" name="subnet_inet4" type="text" value="" maxlength="3" required/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>DHCP 주소</th>
+                    <td>
+                      <input class="ip_field dhcp_range" name="start_dhcp1" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="start_dhcp2" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="start_dhcp3" type="text" value="" maxlength="3" required />.
+                      <nput class="ip_field dhcp_range" name="start_dhcp4" type="text" value="" maxlength="3" required /> ~
+                      <input class="ip_field dhcp_range" name="end_dhcp1" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="end_dhcp2" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="end_dhcp3" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="end_dhcp4" type="text" value="" maxlength="3" required />
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>          
             <div class="col-md-8 well tabcontent" id="system_log">
-                <h1 class="page-header">
-                    <small>System Log</small>
-                </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>시간</th>
-                      <th>내용</th>
-                    </tr>
-                    <tr>
-                       <td>2017-06-12 12:23:30</td>
-                       <td>IP 192.168.200.81 LOGIN 성공</td>
-                    </tr>
-                    <tr>
-                      <td>2017-06-12 19:30:20</td>
-                      <td>IP 192.168.200.83 BLACKLIST 등록 성공</td>
-                    </tr>
-                     <tr>
-                      <td>2017-06-28 08:01:20</td>
-                      <td>모든 설정이 저장됨</td>
-                    </tr>
-                     <tr>
-                      <td>...</td>
-                      <td></td>
-                    </tr>
-                     <tr>
-                      <td>...</td>
-                      <td></td>
-                    </tr>
-                     <tr>
-                      <td>...</td>
-                      <td></td>
-                    </tr>
-                  </table>
-                  
+              <h1 class="page-header">
+                <small>System Log</small>
+              </h1>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>시간</th>
+                    <th>내용</th>
+                  </tr>
+                  <tr>
+                    <td>2017-06-12 12:23:30</td>
+                    <td>IP 192.168.200.81 LOGIN 성공</td>
+                  </tr>
+                  <tr>
+                    <td>2017-06-12 19:30:20</td>
+                    <td>IP 192.168.200.83 BLACKLIST 등록 성공</td>
+                  </tr>
+                  <tr>
+                    <td>2017-06-28 08:01:20</td>
+                    <td>모든 설정이 저장됨</td>
+                  </tr>
+                  <tr>
+                    <td>...</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>...</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>...</td>
+                    <td></td>
+                  </tr>
+                </table>                
               </div>
-            </div>
-            <div class="col-md-8 well tabcontent" id="firmware">
-                <h1 class="page-header">
-                    <small>펌웨어</small>
-                </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th><h4>현재 펌웨어 버전</h4></th>
-                      <td><h4>&nbsp;&nbsp;v 3.02 (2017/07/12)</h4></td>
-                    </tr>
-                    <tr>
-                       <th><h4>최신 펌웨어 버전</h4></th>
-                       <td><h4>&nbsp;&nbsp;v 4.02 (2017/07/28)</h4></td>
-                    </tr>
-                  </table>
-                  <input type=button class="btn btn-default update_config " value="업데이트">
-              </div>
-            </div>
-            <!-- Blog Sidebar Widgets Column -->
+            </div>  
             <div class="col-md-4">
-                <!-- Side Widget Well -->
-                <div class="well tabcontent " id="dynamic_ip_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>유동IP 설명</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent" id="static_ip_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>고정IP 설명</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent " id="block_site_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>유해사이트 차단 설명</li>
-                      </ul>
-                </div>
-
-                <div class="well tabcontent " id="blacklist_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>블랙리스트 설명</li>
-                      </ul>
-                </div>
-
-                <div class="well tabcontent" id="port_forwarding_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>포트포워딩 설명</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent" id="twin_ip_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li >트윈IP 설명</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent" id="system_log_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>시스템로그 설명</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent" id="firmware_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li >펌웨어 설명</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent" id="admin_setting_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>admin : </li>
-                      </ul>
-                </div>
-                <div class="well tabcontent current" id="internet_info_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
-                           네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다.
-                           이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.
-                           IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다.</li>
-                      </ul>
-                </div>
+              <div class="well tabcontent " id="dynamic_ip_desc">
+                <h4>설명</h4>
+                  <ul>
+                    <li>유동IP 설명</li>
+                  </ul>
+              </div>   
+              <div class="well tabcontent" id="system_log_desc">
+                <h4>설명</h4>
+                  <ul>
+                    <li>시스템로그 설명</li>
+                  </ul>
+              </div>
+              <div class="well tabcontent" id="admin_setting_desc">
+                <h4>설명</h4>
+                  <ul>
+                    <li>admin : </li>
+                  </ul>
+              </div>
+              <div class="well tabcontent current" id="internet_info_desc">
+                  <h4>설명</h4>
+                  <ul>
+                    <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
+                        네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다.
+                        이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.
+                        IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다.
+                    </li>
+                  </ul>
+              </div>
             </div>
-        </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <hr />
-                    <p>Copyright &copy; ESP smart AP 2017</p>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </footer>
-
-    </div>
-    <!-- /.container -->
-</form>
-</body>
-
+          </div> <!--wrapper-->
+        </div><!--container-->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <hr />
+            <p>Copyright &copy; ESP smart AP 2017</p>
+          </div>
+        </div>    
+      </footer>    
+    </form>
+  </body>
 </html>

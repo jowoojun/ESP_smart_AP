@@ -6,45 +6,22 @@
 
 body {
     padding-top: 100px;
-    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top.
-     Change if height of navigation changes. */
     background-image: url('../images/bg.jpg');
-
 }
 
 footer {
     margin: 30px 0;
 }
 
-.save_config, .update_config{
+.save_config{
   float: right;
   margin-top: 15px;
-}
-
-.sys_config{
   margin-bottom: 10px;
 }
 
 .log_config{
   width: 100%
   margin-bottom: 20px;
-}
-.twin_config{
-  margin-top: 80px;
-}
-.twin_config div{
-  margin-bottom: 50px;
-}
-.add_email{
- width: 90px;
- height: 30px;
-}
-.update_config{
-  width: 130px;
-  height: 50px;
-}
-.port_forwarding_config td:nth-child(3){
-  padding-left: 30px;
 }
 .tabcontent.current{
   display: block;
@@ -79,8 +56,7 @@ footer {
   margin: 4px;
 }
 
-.ip_field,
-.black_mac{
+.ip_field{
   width: 30px;
 }
 
@@ -88,48 +64,6 @@ footer {
   display: none;
 }
 
-#mac_blacklist,#word_list,#time_blacklist{
-  width:100%;
-}
-
-#search_area{
-  height: 80%;
-}
-
-div#search_area p{
-  padding-left: 30px;
-  margin-top: 190px;
-}
-
-#searchbox{
-  width:170px;
-}
-
-.wl{
-  margin-left: 20px;
-}
-
-.bs{
-  padding-bottom: 10px;
-}
-
-
-
-#days{
-  float: left;
-}
-
-
-#bs_cat{
-  padding-left: 80px;
-}
-
-#blacklist>div>label{
-  min-height: 1px;
-  padding:15px;
-  float: left;
-  width: 66.66666667%;
-}
 #block_page, #block_list{
   width: 200px;
   height: 250px;
