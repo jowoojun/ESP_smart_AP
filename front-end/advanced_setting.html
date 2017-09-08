@@ -12,7 +12,7 @@
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/blog-home.css" rel="stylesheet">
     <link href="./css/jquery.autocomplete.css" rel="stylesheet">
-    <title>고급설정</title>
+    <title>공유기설정</title>
 </head>
 
 <body>
@@ -22,158 +22,148 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#">고급설정</a>
         </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav menu tab">
-                    <li><a href="#">네트워크관리</a>
-                      <ul class="sub">
-                        <li class="current" data-tab="dynamic_ip">유동 IP/고정IP</li>
-                      </ul>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav tab">
+                    <li class="current" data-tab="internet_info">
+                        <a href="#">인터넷 정보</a>
                     </li>
-                    <li><a href="#">유해사이트차단</a>
-                      <ul class="sub">
-                        <li data-tab="block_word">특정단어차단</li>
-                        <li data-tab="block_site">유해사이트차단</li>
-                      </ul>
+                    <li data-tab="admin_setting">
+                        <a href="#">Admin 설정</a>
                     </li>
-                    <li class="active_tab" data-tab="blacklist"><a href="#">블랙리스트</a>
-                      <ul class="sub">
-                        <li data-tab="blacklist">블랙리스트</li>
-                      </ul>
+                    <li data-tab="dynamic_ip">
+                        <a href="#">IP설정</a>
                     </li>
-                    <li><a href="#">NAT/Router</a>
-                      <ul class="sub">
-                        <li data-tab="port_forwarding">포트포워딩</li>
-                        <li data-tab="twin_ip">트윈 IP</li>
-                      </ul>
+                    <li data-tab="system_log">
+                        <a href="#">시스템로그</a>
                     </li>
-                    <li><a href="#">시스템관리</a>
-                      <ul class="sub">
-                        <li data-tab="system_log">System Log</li>
-                        <li data-tab="firmware">펌웨어</li>
-                      </ul>
+                    <li>
+                        <a href="general_settings.html">Home</a>
                     </li>
-                    <li><a href="general_settings.html">HOME</a></li>
                 </ul>
-        </div>
+          </div>
 
         <div class="row">
-            <div class="col-md-8 well tabcontent" id="dynamic_ip"> <!--current-->
+            <div id="internet_info" class="col-md-8 well tabcontent current">
                 <h1 class="page-header">
-                    <small>인터넷 연결설정</small>
+                    <small>인터넷 정보</small>
                 </h1>
                 <div class="table-responsive">
                   <table class="table table-bordered">
                     <tr>
-                      <th>연결방식</th>
-                      <td>
-                        <input type="radio" name="con_type" value="ip_dynamic" checked/>유동IP
-                        <input type="radio" name="con_type" value="ip_static"/>고정IP
-                      </td>
-                    </tr>
-                  </table>
-
-                  <table class="table table-bordered" id="ip_dynamic_cont">
-                    <tr>
-                      <th>DNS 서버설정</th>
-                      <td>
-                        <input type="radio" name="dns_server" value="dns_dynamic" checked/>자동
-                        <input type="radio" name="dns_server" value="dns_static"/>수동
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>기본 DNS</th>
-                      <td>
-                        <input class="ip_field dns_default" name="dns_d1" type="text" value="" maxlength="3" required readonly/>.
-                        <input class="ip_field dns_default" name="dns_d2" type="text" value="" maxlength="3" required readonly/>.
-                        <input class="ip_field dns_default" name="dns_d3" type="text" value="" maxlength="3" required readonly/>.
-                        <input class="ip_field dns_default" name="dns_d4" type="text" value="" maxlength="3" required readonly/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>보조 DNS
+                      <th>
+                        인터넷 연결상태
                       </th>
                       <td>
-                        <input class="ip_field dns_secondary" name="dns_s1" type="text" value="" maxlength="3" required readonly/>.
-                        <input class="ip_field dns_secondary" name="dns_s2" type="text" value="" maxlength="3" required readonly/>.
-                        <input class="ip_field dns_secondary" name="dns_s3" type="text" value="" maxlength="3" required readonly/>.
-                        <input class="ip_field dns_secondary" name="dns_s4" type="text" value="" maxlength="3" required readonly/>
+                        인터넷에 정상적으로 연결됨
                       </td>
                     </tr>
                     <tr>
                       <th>
-                        채널 설정
+                        외부 IP
                       </th>
                       <td>
-                        <select>
-                          <option value="1">채널1</option>
-                          <option value="2">채널2</option>
-                        </select>
+
                       </td>
                     </tr>
-                </table>
+                    <tr>
+                      <th>
+                        기본 DNS 서버
+                      </th>
+                      <td>
 
-                <table class="table table-bordered" id="ip_static_cont">
-                  <tr>
-                    <th>외부 IP</th>
-                    <td>
-                      <input class="ip_field" name="ip_o1" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="ip_o2" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="ip_o3" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="ip_o4" type="text" value="" maxlength="3" required/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>서브넷마스크</th>
-                    <td>
-                      <input class="ip_field" name="subnet1" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="subnet2" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="subnet3" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="subnet4" type="text" value="" maxlength="3" required/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>게이트웨이</th>
-                    <td>
-                      <input class="ip_field" name="gateway1" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="gateway2" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="gateway3" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="gateway4" type="text" value="" maxlength="3" required/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>기본 DNS</th>
-                    <td>
-                      <input class="ip_field" name="static_dns_d1" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="static_dns_d2" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="static_dns_d3" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="static_dns_d4" type="text" value="" maxlength="3" required/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>보조 DNS
-                    </th>
-                    <td>
-                      <input class="ip_field" name="static_dns_s1" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="static_dns_s2" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="static_dns_s3" type="text" value="" maxlength="3" required/>.
-                      <input class="ip_field" name="static_dns_s4" type="text" value="" maxlength="3" required/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      채널 설정
-                    </th>
-                    <td>
-                      <select>
-                        <option value="1">채널1</option>
-                        <option value="2">채널2</option>
-                      </select>
-                    </td>
-                  </tr>
-              </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        보조 DNS 서버
+                      </th>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        GATEWAY
+                      </th>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        DHCP 시작 IP
+                      </th>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        DHCP 종료 IP
+                      </th>
+                      <td>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        MAC 주소
+                      </th>
+                      <td>
+
+                      </td>
+                    </tr>
+                  </table>
+                </div>
             </div>
 
+
+            <div id="admin_setting" class="col-md-8 well tabcontent">
+                <h1 class="page-header">
+                    <small>Admin 설정</small>
+                </h1>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th>
+                        SSID변경
+                      </th>
+                      <td>
+                        <input name="" type="text" required/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        비밀번호 변경
+                      </th>
+                      <td>
+                        <input name="" type="password" required/>
+                      </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <th>
+                        비밀번호 확인
+                      </th>
+                      <td>
+                        <input name="" type="password" required/>
+                      </td>
+                    </tr>
+                  </table>
+                  <input type=submit class="btn btn-default save_config" value="적용">
+                </div>
+                <hr />
+                <h1 class="page-header">
+                    <small>시스템설정</small>
+                </h1>
+                <div class="col-md-3">
+                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="시스템 재시작">
+                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="초기설정 복원">
+                </div>
+            </div>
+
+
+            <div class="col-md-8 well tabcontent" id="dynamic_ip"> <!--current-->
               <h1 class="page-header">
                     <small>내부 네트워크 설정</small>
               </h1>
@@ -203,15 +193,6 @@
                     </tr>
                     <tr>
                       <th>
-                        DHCP 사용
-                      </th>
-                      <td>
-                        <input type="radio" name="dhcp" value="use" checked/>사용
-                        <input type="radio" name="dhcp" value="stop"/>중지
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
                         DHCP 주소
                       </th>
                       <td>
@@ -226,32 +207,6 @@
                       </td>
                     </tr>
                   </table>
-                </div>
-            </div>
-
-            <div class="col-md-8 well tabcontent" id="block_word">
-                <h1 class="page-header">
-                    <small>특정단어차단</small>
-                </h1>
-                <div class="col-md-6">
-                  <p>
-                    <select name="word_list" size="20" id="word_list" multiple>
-                      <option value="word1">word1</option>
-                      <option value="word2">word2</option>
-                      <option value="word3">word3</option>
-                    </select>
-                  </p>
-                  <p>
-                    <button class="btn btn-default" id="word_all"/>전체선택</button>
-                    <button class="btn btn-default" id="word_not_all"/>전체해제</button>
-                    <button class="btn btn-default save_config" id="del_word"/>삭제</button>
-                  </p>
-                </div>
-                <div class="col-md-5" id="search_area">
-                  <p>
-                    <input type="text" id="searchbox"/>
-                    <button name="btnAdd" class="btn btn-default" id="add_word"/>추가</button>
-                  </p>
                 </div>
             </div>
             <div class="col-md-8 well tabcontent" id="block_site">
@@ -348,7 +303,7 @@
                 </div>
 
             </div>
-            <div class="col-md-8 well tabcontent current" id="blacklist">
+            <div class="col-md-8 well tabcontent " id="blacklist">
                 <h1 class="page-header">
                     <small>블랙리스트</small>
                 </h1>
@@ -438,24 +393,7 @@
                       <td></td>
                     </tr>
                   </table>
-                  <table class="log_config">
-                    <tr>
-                      <td>로그 기능 설정</td>
-                      <td>
-                        <input type="radio" name="con_type" checked/>기록
-                        <input type="radio" name="con_type" />중지
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>E-mail 보고설정</td>
-                      <td>
-                        <input type="radio" name="con_type_2" checked/>사용
-                        <input type="radio" name="con_type_2" />사용안함 &nbsp;&nbsp;&nbsp;
-                        <input type=button class="btn btn-default add_email " value="E-mail 등록">
-                      </td>
-                    </tr>
-                  </table>
-                  <input type=submit class="btn btn-default save_config" value="저장">
+                  
               </div>
             </div>
             <div class="col-md-8 well tabcontent" id="firmware">
@@ -476,11 +414,10 @@
                   <input type=button class="btn btn-default update_config " value="업데이트">
               </div>
             </div>
-
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
                 <!-- Side Widget Well -->
-                <div class="well tabcontent current" id="dynamic_ip_desc">
+                <div class="well tabcontent " id="dynamic_ip_desc">
                     <h4>설명</h4>
                       <ul>
                         <li>유동IP 설명</li>
@@ -492,21 +429,14 @@
                         <li>고정IP 설명</li>
                       </ul>
                 </div>
-
-                <div class="well tabcontent" id="block_word_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>특정단어 차단 설명</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent" id="block_site_desc">
+                <div class="well tabcontent " id="block_site_desc">
                     <h4>설명</h4>
                       <ul>
                         <li>유해사이트 차단 설명</li>
                       </ul>
                 </div>
 
-                <div class="well tabcontent" id="blacklist_desc">
+                <div class="well tabcontent " id="blacklist_desc">
                     <h4>설명</h4>
                       <ul>
                         <li>블랙리스트 설명</li>
@@ -535,6 +465,21 @@
                     <h4>설명</h4>
                       <ul>
                         <li >펌웨어 설명</li>
+                      </ul>
+                </div>
+                <div class="well tabcontent" id="admin_setting_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>admin : </li>
+                      </ul>
+                </div>
+                <div class="well tabcontent current" id="internet_info_desc">
+                    <h4>설명</h4>
+                      <ul>
+                        <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
+                           네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다.
+                           이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.
+                           IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다.</li>
                       </ul>
                 </div>
             </div>

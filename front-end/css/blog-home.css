@@ -18,6 +18,7 @@ footer {
 
 .save_config, .update_config{
   float: right;
+  margin-top: 15px;
 }
 
 .sys_config{
@@ -129,11 +130,9 @@ div#search_area p{
   float: left;
   width: 66.66666667%;
 }
-#white_block{
+#block_page, #block_list{
   width: 200px;
-}
-#black_block{
-  width: 200px;
+  height: 250px;
 }
 .field{
   width: 200px;
@@ -147,6 +146,9 @@ div#search_area p{
   float: left;
   margin-right: 30px;
   margin-top: 30px;
+}
+#move_to_drop{
+  margin-bottom: 10px;
 }
 .onoffswitch {
     position: relative;
