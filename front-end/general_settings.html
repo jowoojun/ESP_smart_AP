@@ -20,172 +20,55 @@
     <div class="container">
         <div class="wrapper">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">일반설정</a>
+            <a class="navbar-brand" href="#">관리</a>
         </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav tab">
-                    <li class="current" data-tab="internet_info">
-                        <a href="#">인터넷 정보</a>
-                    </li>
-                    <li data-tab="admin_setting">
-                        <a href="#">Admin 설정</a>
-                    </li>
-                    <li data-tab="block_setting">
-                        <a href="#">차단페이지 설정</a>
-                    </li>
+                 <li data-tab="block_setting">
+                    <a href="#">차단페이지</a>
+                  </li>
+                    <li class="current" data-tab="block_reservation">
+                        <a href="#">예약차단</a>
+                    </li>                   
                 </ul>
           </div>
         <div class="row">
-
-            <!-- Blog Entries Column -->
-            <div id="internet_info" class="col-md-8 well tabcontent">
+            <div id="block_reservation" class="col-md-8 well tabcontent">
                 <h1 class="page-header">
-                    <small>인터넷 정보</small>
+                    <small>예약차단</small>
                 </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
+                <table class="table table-bordered" id="time_schedule">
                     <tr>
-                      <th>
-                        인터넷 연결상태
-                      </th>
+                      <th>오전수업</th>
                       <td>
-                        인터넷에 정상적으로 연결됨
+                        09:00 ~ 11:50
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>점심시간</th>
+                      <td>
+                        11:50 ~ 13:00
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>오후수업</th>
+                      <td>
+                        13:00 ~ 16:50 
                       </td>
                     </tr>
                     <tr>
                       <th>
-                        외부 IP
+                        방과후
                       </th>
                       <td>
-
+                        16:50 ~
                       </td>
                     </tr>
-                    <tr>
-                      <th>
-                        기본 DNS 서버
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        보조 DNS 서버
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        GATEWAY
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        DHCP 시작 IP
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        DHCP 종료 IP
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        MAC 주소
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        원격관리 정보
-                      </th>
-                      <td>
-
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-                <input type=submit class="btn btn-default save_config" value="적용">
-            </div>
-
-
-            <div id="admin_setting" class="col-md-8 well tabcontent">
-                <h1 class="page-header">
-                    <small>Admin 설정</small>
-                </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>
-                        SSID변경
-                      </th>
-                      <td>
-                        <input name="" type="text" required/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        비밀번호 변경
-                      </th>
-                      <td>
-                        <input name="" type="password" required/>
-                      </td>
-                    </tr>
-                    <tr>
-                    <tr>
-                      <th>
-                        비밀번호 확인
-                      </th>
-                      <td>
-                        <input name="" type="password" required/>
-                      </td>
-                    </tr>
-                      <tr>
-                      <th>
-                        최대 접속 제한
-                      </th>
-                      <td>
-                        <input name="" type="text" required/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        비밀번호 횟수제한
-                      </th>
-                      <td>
-                        <input name="" type="text" required/>
-                      </td>
-                    </tr>
-                  </table>
-                  <input type=submit class="btn btn-default save_config" value="적용">
-                </div>
-                <hr />
-                <h1 class="page-header">
-                    <small>시스템설정</small>
-                </h1>
-                <div class="col-md-3">
-                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="시스템 재시작">
-                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="초기설정 복원">
-                    <input type=button class="btn btn-default btn-lg btn-block sys_config" value="자동종료 설정">
-                </div>
-            </div>
-<!--차단페이지 -->
+                </table>                
+            </div>        
             <div id="block_setting" class="col-md-8 well tabcontent current">
                 <h1 class="page-header">
-                    <small>차단/허용 페이지 설정</small>
+                    <small>차단 페이지 설정</small>
                 </h1>
                 <div class="onoffswitch">
                   <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
@@ -195,162 +78,41 @@
                   </label>
                 </div>
                 <div>
-
                   <fieldset class="field block">
-                    <legend><h4>허용페이지</h4></legend>
-                    <select size= 6 id="white_block" multiple>
+                    <legend><h4>차단페이지</h4></legend>
+                    <select size= 10 id="block_page" multiple>
                       <option id="option1_1" draggable="true">facebook</option>
                       <option id="option1_2" draggable="true">instagram</option>
                       <option id="option1_3" draggable="true">twitter</option>
                     </select>
                   </fieldset>
 
-                  <fieldset id="move_button">
+                  <div id="move_button">
                     <button class="btn btn-default" id="move_to_drop">▶</button><br />
                     <button class="btn btn-default" id="move_to_allow">◀</button>
-                  </fieldset>
-
+                  </div>
 
                   <fieldset class="field">
-                    <legend><h4>차단페이지</h4></legend>
-                    <select size= 6 id="black_block" multiple>
-
+                    <legend><h4>페이지리스트</h4></legend>
+                    <select size= 10 id="block_list" multiple>
+                      
                     </select>
                   </fieldset>
 
                   <div class="col-md-12">
                     <input type=submit class="btn btn-default save_config" value="적용">
                   </div>
-                </div>
-                <h1 class="page-header">
-                    <small>예약 차단</small>
-                </h1>
-                  <div class="col-md-6">
-                    <select name="select_box1" size="10" id="time_blacklist" multiple selected="false">
-                      <option value="mon,tue,wed_2-3">mon,tue,wed_2-3</option>
-                      <option value="sun,mon_2-5">sun,mon_2-5</option>
-                    </select>
-                    <button class="btn btn-default" id="timelist_all"/>전체선택</button>
-                    <button class="btn btn-default" id="timelist_not_all"/>전체해제</button>
-                    <button class="btn btn-default save_config" id="time_del">삭제</button>
-                  </div>
-                  <div class="bs" id="days">
-                    <table>
-                      <tr>
-                        <td>
-                          <label><input type="checkbox" name="day" value="sun"/> 일 </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label><input type="checkbox" name="day" value="mon"/> 월 </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label><input type="checkbox" name="day" value="tues"/> 화</label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label><input type="checkbox" name="day" value="wed"/> 수</label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label><input type="checkbox" name="day" value="thu"/> 목</label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label><input type="checkbox" name="day" value="fri"/> 금</label>
-
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <label><input type="checkbox" name="day" value="sat"/> 토</label>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="bs" id="time_range">
-                    <span>&nbsp;&nbsp;&nbsp;시작</span> <select name="time_start" id="time_start">
-                      <option value="ts0">0시</option>
-                      <option value="ts1">1시</option>
-                      <option value="ts2">2시</option>
-                      <option value="ts3">3시</option>
-                      <option value="ts4">4시</option>
-                      <option value="ts5">5시</option>
-                      <option value="ts6">6시</option>
-                      <option value="ts7">7시</option>
-                      <option value="ts8">8시</option>
-                      <option value="ts9">9시</option>
-                      <option value="ts10">10시</option>
-                      <option value="ts11">11시</option>
-                      <option value="ts12">12시</option>
-                      <option value="ts13">13시</option>
-                      <option value="ts14">14시</option>
-                      <option value="ts15">15시</option>
-                      <option value="ts16">16시</option>
-                      <option value="ts17">17시</option>
-                      <option value="ts18">18시</option>
-                      <option value="ts19">19시</option>
-                      <option value="ts20">20시</option>
-                      <option value="ts21">21시</option>
-                      <option value="ts22">22시</option>
-                      <option value="ts23">23시</option>
-                    </select> ~ 끝
-                    <select name="time_end" id="time_end">
-                      <option value="te1">1시</option>
-                      <option value="te2">2시</option>
-                      <option value="te3">3시</option>
-                      <option value="te4">4시</option>
-                      <option value="te5">5시</option>
-                      <option value="te6">6시</option>
-                      <option value="te7">7시</option>
-                      <option value="te8">8시</option>
-                      <option value="te9">9시</option>
-                      <option value="te10">10시</option>
-                      <option value="te11">11시</option>
-                      <option value="te12">12시</option>
-                      <option value="te13">13시</option>
-                      <option value="te14">14시</option>
-                      <option value="te15">15시</option>
-                      <option value="te16">16시</option>
-                      <option value="te17">17시</option>
-                      <option value="te18">18시</option>
-                      <option value="te19">19시</option>
-                      <option value="te20">20시</option>
-                      <option value="te21">21시</option>
-                      <option value="te22">22시</option>
-                      <option value="te23">23시</option>
-                      <option value="te24">24시</option>
-                    </select>
-                  </div>
-                  <button class="btn btn-default save_config" id="time_add">추가</button>
-
+                </div>                         
             </div>
-            <!-- Blog Sidebar Widgets Column -->
+            
             <div class="col-md-4">
-                <!-- Side Widget Well -->
-                <div class="well tabcontent current" id="internet_info_desc">
+                <div class="well tabcontent " id="block_reservation_desc">
                     <h4>설명</h4>
                       <ul>
-                        <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
-                           네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다.
-                           이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.
-                           IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다.</li>
+                        <li>예약 차단 : </li>
                       </ul>
                 </div>
-
-                <div class="well tabcontent" id="admin_setting_desc">
-                    <h4>설명</h4>
-                      <ul>
-                        <li>SSID : 무선 랜을 통해 전송되는 패킷들의 각 헤더에 덧붙여지는 32byte 길이의 고유 식별자</li>
-                      </ul>
-                </div>
-                <div class="well tabcontent" id="block_setting_desc">
+                <div class="well tabcontent current" id="block_setting_desc">
                     <h4>설명</h4>
                       <ul>
                         <li>차단페이지 : </li>
@@ -358,26 +120,19 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <a class="btn btn-default btn-lg btn-block" role="button" href="advanced_setting.html">고급설정</a>
+                <a class="btn btn-default btn-lg btn-block" role="button" href="advanced_setting.html">공유기 설정</a>
             </div>
         </div>
         </div>
-        <!-- /.row -->
-
-        <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
                     <hr />
                     <p>Copyright &copy; ESP smart AP 2017</p>
-                </div>
-                <!-- /.col-lg-12 -->
+                </div>               
             </div>
-            <!-- /.row -->
         </footer>
-
     </div>
-    <!-- /.container -->
 </form>
 </body>
 
