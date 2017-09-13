@@ -207,6 +207,9 @@
                       </td>
                     </tr>
                   </table>
+                  <div class="col-md-12">
+                    <input type=submit class="btn btn-default save_config" value="적용">
+                  </div>
                 </div>
             </div>
             <div class="col-md-8 well tabcontent" id="block_site">
@@ -363,38 +366,14 @@
                     <small>System Log</small>
                 </h1>
                 <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>시간</th>
-                      <th>내용</th>
-                    </tr>
-                    <tr>
-                       <td>2017-06-12 12:23:30</td>
-                       <td>IP 192.168.200.81 LOGIN 성공</td>
-                    </tr>
-                    <tr>
-                      <td>2017-06-12 19:30:20</td>
-                      <td>IP 192.168.200.83 BLACKLIST 등록 성공</td>
-                    </tr>
-                     <tr>
-                      <td>2017-06-28 08:01:20</td>
-                      <td>모든 설정이 저장됨</td>
-                    </tr>
-                     <tr>
-                      <td>...</td>
-                      <td></td>
-                    </tr>
-                     <tr>
-                      <td>...</td>
-                      <td></td>
-                    </tr>
-                     <tr>
-                      <td>...</td>
-                      <td></td>
-                    </tr>
-                  </table>
-                  
-              </div>
+                  <fieldset class="log_field">
+                    <select size= 2 id="log_list">
+                      <option id="option1_1" draggable="true">facebook</option>
+                      <option id="option1_2" draggable="true">instagram</option>
+                      <option id="option1_3" draggable="true">twitter</option>
+                    </select>
+                  </fieldset>
+                </div>
             </div>
             <div class="col-md-8 well tabcontent" id="firmware">
                 <h1 class="page-header">

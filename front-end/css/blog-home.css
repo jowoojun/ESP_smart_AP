@@ -79,9 +79,14 @@ footer {
   margin: 4px;
 }
 
+
 .ip_field,
 .black_mac{
   width: 30px;
+}
+
+.time_field{
+  width:20px;
 }
 
 #ip_static_cont{
@@ -134,6 +139,7 @@ div#search_area p{
   width: 200px;
   height: 250px;
 }
+
 .field{
   width: 200px;
 }
@@ -142,6 +148,20 @@ div#search_area p{
   margin-right: 30px;
   margin-left: 30px;
 }
+
+.log_field{
+  width: 90%;
+  float: left;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#log_list{
+  width: 90%;
+  margin-left: 30px;
+  height : 400px;
+}
+
 #move_button{
   float: left;
   margin-right: 30px;

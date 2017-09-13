@@ -10,20 +10,33 @@ $(function(){
 });
 
 $(function(){
-  $("#move_to_drop").click(function(){
-    $("#white_block option:selected").each(function(){
-      $(this).remove().appendTo("#black_block");
+  $("#move_to_allow").click(function(){
+    $("#block_page option:selected").each(function(){
+      $(this).remove().appendTo("#block_list");
     });
   });
 
-  $("#move_to_allow").click(function(){
-    $("#black_block option:selected").each(function(){
-      $(this).remove().appendTo("#white_block");
+  $("#move_to_drop").click(function(){
+    $("#block_list option:selected").each(function(){
+      $(this).remove().appendTo("#block_page");
     });
+  });
+
+  $(".timepicker").timepicker({
+      timeFormat: "h:mm p",
+      interval: 60,
+      minTime: "10",
+      maxTime: "6:00pm",
+      defaultTime: "11",
+      startTime: "10:00",
+      dynamic: false,
+      dropdown: true,
+      scrollbar: true
   });
 });
 
 
+/*
 $(function(){
   $("#time_add").click(function(){
     //날짜시간 만들기
@@ -68,3 +81,4 @@ $(document).ready(function(){
     $("#time_blacklist > option").attr("selected",false);
   });
 });
+*/

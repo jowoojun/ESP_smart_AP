@@ -29,7 +29,7 @@
                   </li>
                     <li class="current" data-tab="block_reservation">
                         <a href="#">예약차단</a>
-                    </li>                   
+                    </li>
                 </ul>
           </div>
         <div class="row">
@@ -41,19 +41,28 @@
                     <tr>
                       <th>오전수업</th>
                       <td>
-                        09:00 ~ 11:50
+                        <input class="time_field" name="class_am1" type="text" value="" maxlength="2" required/>:
+                        <input class="time_field" name="class_am2" type="text" value="" maxlength="2" required/> ~
+                        <input class="time_field" name="class_am3" type="text" value="" maxlength="2" required/>:
+                        <input class="time_field" name="class_am4" type="text" value="" maxlength="2" required/>
                       </td>
                     </tr>
                     <tr>
                       <th>점심시간</th>
                       <td>
-                        11:50 ~ 13:00
+                        <input class="time_field" name="lunchtime1" type="text" value="" maxlength="2" required/>:
+                        <input class="time_field" name="lunchtime2" type="text" value="" maxlength="2" required/> ~
+                        <input class="time_field" name="lunchtime3" type="text" value="" maxlength="2" required/>:
+                        <input class="time_field" name="lunchtime4" type="text" value="" maxlength="2" required/>
                       </td>
                     </tr>
                     <tr>
                       <th>오후수업</th>
                       <td>
-                        13:00 ~ 16:50 
+                        <input class="time_field" name="class_pm1" type="text" value="" maxlength="2" required/>:
+                        <input class="time_field" name="class_pm2" type="text" value="" maxlength="2" required/> ~
+                        <input class="time_field" name="class_pm3" type="text" value="" maxlength="2" required/>:
+                        <input class="time_field" name="class_pm4" type="text" value="" maxlength="2" required/>
                       </td>
                     </tr>
                     <tr>
@@ -61,11 +70,15 @@
                         방과후
                       </th>
                       <td>
-                        16:50 ~
+                        <input class="time_field" name="afterschool1" type="text" value="" maxlength="2" required/>:
+                        <input class="time_field" name="afterschool2" type="text" value="" maxlength="2" required/> ~
                       </td>
                     </tr>
-                </table>                
-            </div>        
+                </table>
+                <div class="col-md-12">
+                  <input type=submit class="btn btn-default save_config" value="적용">
+                </div>
+            </div>
             <div id="block_setting" class="col-md-8 well tabcontent current">
                 <h1 class="page-header">
                     <small>차단 페이지 설정</small>
@@ -88,23 +101,23 @@
                   </fieldset>
 
                   <div id="move_button">
-                    <button class="btn btn-default" id="move_to_drop">▶</button><br />
-                    <button class="btn btn-default" id="move_to_allow">◀</button>
+                    <button class="btn btn-default" id="move_to_allow">▶</button><br />
+                    <button class="btn btn-default" id="move_to_drop">◀</button>
                   </div>
 
                   <fieldset class="field">
                     <legend><h4>페이지리스트</h4></legend>
                     <select size= 10 id="block_list" multiple>
-                      
+
                     </select>
                   </fieldset>
 
                   <div class="col-md-12">
                     <input type=submit class="btn btn-default save_config" value="적용">
                   </div>
-                </div>                         
+                </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="well tabcontent " id="block_reservation_desc">
                     <h4>설명</h4>
@@ -129,7 +142,7 @@
                 <div class="col-lg-12">
                     <hr />
                     <p>Copyright &copy; ESP smart AP 2017</p>
-                </div>               
+                </div>
             </div>
         </footer>
     </div>
