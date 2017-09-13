@@ -3,6 +3,7 @@ import React, {PureComponent} from 'react';
 class AdminInfo extends PureComponent{
 
     render(){
+
         return(
 
             <div id="admin_setting" className="col-md-8 well tabcontent">
@@ -13,19 +14,19 @@ class AdminInfo extends PureComponent{
                     <table className="table table-bordered">
                         <tr>
                             <th>SSID변경</th>
-                            <td>인터넷에 정상적으로 연결됨</td>
+                            <td><input name="" type="text" required/></td>
                         </tr>
                         <tr>
                             <th>비밀번호 변경</th>
-                            <td>192.168.82.200</td>
+                            <td><input name="" type="password" required/></td>
                         </tr>
                         <tr>
                             <th>최대 접속 제한</th>
-                            <td>인터넷에 정상적으로 연결됨</td>
+                            <td><input name="" type="text" required/></td>
                         </tr>
                         <tr>
                             <th>비밀번호 횟수제한</th>
-                            <td>인터넷에 정상적으로 연결됨</td>
+                            <td><input name="" type="text" required/></td>
                         </tr>
                     </table>
                     <input type='submit' className="btn btn-default save_config" value="저장" />

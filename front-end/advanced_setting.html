@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="./js/search_auto/lib/jquery.ajaxQueue.js"></script>
@@ -13,12 +12,17 @@
     <link href="./css/blog-home.css" rel="stylesheet">
     <link href="./css/jquery.autocomplete.css" rel="stylesheet">
     <title>공유기설정</title>
+<<<<<<< HEAD
 </head>
+=======
+  </head>
+>>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
 
-<body>
-<form>
-    <div class="container">
+  <body>
+    <form>
+      <div class="container">
         <div class="wrapper">
+<<<<<<< HEAD
         <div class="navbar-header">
             <a class="navbar-brand" href="#">고급설정</a>
         </div>
@@ -164,21 +168,117 @@
 
 
             <div class="col-md-8 well tabcontent" id="dynamic_ip"> <!--current-->
+=======
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#">고급설정</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav tab">
+              <li class="current" data-tab="internet_info">
+                <a href="#">인터넷 정보</a>
+              </li>
+              <li data-tab="admin_setting">
+                <a href="#">Admin 설정</a>
+              </li>
+              <li data-tab="dynamic_ip">
+                  <a href="#">IP설정</a>
+              </li>
+              <li data-tab="system_log">
+                <a href="#">시스템로그</a>
+              </li>
+              <li>
+                <a href="general_settings.html">Home</a>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div id="internet_info" class="col-md-8 well tabcontent current">
               <h1 class="page-header">
-                    <small>내부 네트워크 설정</small>
+                <small>인터넷 정보</small>
               </h1>
-                <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th>
-                        IP 주소
-                      </th>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>인터넷 연결상태</th>
+                    <td>인터넷에 정상적으로 연결됨</td>
+                  </tr>
+                  <tr>
+                    <th>외부 IP</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>기본 DNS 서버</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>보조 DNS 서버</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>GATEWAY</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>DHCP 시작 IP</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>DHCP 종료 IP</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>MAC 주소</th>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="admin_setting" class="col-md-8 well tabcontent">
+              <h1 class="page-header">
+                <small>Admin 설정</small>
+              </h1>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>SSID변경</th>
+                    <td><input name="" type="text" required/></td>
+                  </tr>
+                  <tr>
+                    <th>비밀번호 변경</th>
+                    <td><input name="" type="password" required/></td>
+                  </tr>
+                  <tr>
+                    <th>비밀번호 확인</th>
+                    <td><input name="" type="password" required/></td>
+                  </tr>
+                </table>
+                <input type=submit class="btn btn-default save_config" value="적용">
+              </div>
+              <hr />
+              <h1 class="page-header">
+                <small>시스템설정</small>
+              </h1>
+              <div class="col-md-3">
+                <input type=button class="btn btn-default btn-lg btn-block sys_config" value="시스템 재시작">
+                <input type=button class="btn btn-default btn-lg btn-block sys_config" value="초기설정 복원">
+              </div>
+            </div>
+            <div class="col-md-8 well tabcontent" id="dynamic_ip">
+>>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
+              <h1 class="page-header">
+                <small>내부 네트워크 설정</small>
+              </h1>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>IP 주소</th>
                       <td>
                         <input class="ip_field" name="ip_inet1" type="text" value="" maxlength="3" required/>.
                         <input class="ip_field" name="ip_inet2" type="text" value="" maxlength="3" required/>.
                         <input class="ip_field" name="ip_inet3" type="text" value="" maxlength="3" required/>.
                         <input class="ip_field" name="ip_inet4" type="text" value="" maxlength="3" required/>
                       </td>
+<<<<<<< HEAD
                     </tr>
                     <tr>
                       <th>
@@ -474,13 +574,111 @@
                     <p>Copyright &copy; ESP smart AP 2017</p>
                 </div>
                 <!-- /.col-lg-12 -->
+=======
+                  </tr>
+                  <tr>
+                    <th>서브넷마스크</th>
+                    <td>
+                      <input class="ip_field" name="subnet_inet1" type="text" value="" maxlength="3" required/>.
+                      <input class="ip_field" name="subnet_inet2" type="text" value="" maxlength="3" required/>.
+                      <input class="ip_field" name="subnet_inet3" type="text" value="" maxlength="3" required/>.
+                      <input class="ip_field" name="subnet_inet4" type="text" value="" maxlength="3" required/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>DHCP 주소</th>
+                    <td>
+                      <input class="ip_field dhcp_range" name="start_dhcp1" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="start_dhcp2" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="start_dhcp3" type="text" value="" maxlength="3" required />.
+                      <nput class="ip_field dhcp_range" name="start_dhcp4" type="text" value="" maxlength="3" required /> ~
+                      <input class="ip_field dhcp_range" name="end_dhcp1" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="end_dhcp2" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="end_dhcp3" type="text" value="" maxlength="3" required />.
+                      <input class="ip_field dhcp_range" name="end_dhcp4" type="text" value="" maxlength="3" required />
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>          
+            <div class="col-md-8 well tabcontent" id="system_log">
+              <h1 class="page-header">
+                <small>System Log</small>
+              </h1>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>시간</th>
+                    <th>내용</th>
+                  </tr>
+                  <tr>
+                    <td>2017-06-12 12:23:30</td>
+                    <td>IP 192.168.200.81 LOGIN 성공</td>
+                  </tr>
+                  <tr>
+                    <td>2017-06-12 19:30:20</td>
+                    <td>IP 192.168.200.83 BLACKLIST 등록 성공</td>
+                  </tr>
+                  <tr>
+                    <td>2017-06-28 08:01:20</td>
+                    <td>모든 설정이 저장됨</td>
+                  </tr>
+                  <tr>
+                    <td>...</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>...</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>...</td>
+                    <td></td>
+                  </tr>
+                </table>                
+              </div>
+            </div>  
+            <div class="col-md-4">
+              <div class="well tabcontent " id="dynamic_ip_desc">
+                <h4>설명</h4>
+                  <ul>
+                    <li>유동IP 설명</li>
+                  </ul>
+              </div>   
+              <div class="well tabcontent" id="system_log_desc">
+                <h4>설명</h4>
+                  <ul>
+                    <li>시스템로그 설명</li>
+                  </ul>
+              </div>
+              <div class="well tabcontent" id="admin_setting_desc">
+                <h4>설명</h4>
+                  <ul>
+                    <li>admin : </li>
+                  </ul>
+              </div>
+              <div class="well tabcontent current" id="internet_info_desc">
+                  <h4>설명</h4>
+                  <ul>
+                    <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
+                        네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다.
+                        이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.
+                        IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다.
+                    </li>
+                  </ul>
+              </div>
+>>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
             </div>
-            <!-- /.row -->
-        </footer>
-
-    </div>
-    <!-- /.container -->
-</form>
-</body>
-
+          </div> <!--wrapper-->
+        </div><!--container-->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <hr />
+            <p>Copyright &copy; ESP smart AP 2017</p>
+          </div>
+        </div>    
+      </footer>    
+    </form>
+  </body>
 </html>

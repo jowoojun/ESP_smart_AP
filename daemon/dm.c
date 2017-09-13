@@ -6,6 +6,7 @@
 
 // Max token count = 20
 #define TOKEN_COUNT 20
+#define MAX 100
 
 // token enum
 typedef enum _TOKEN_TYPE{
@@ -47,8 +48,8 @@ char *getArrayString(JSON *json, char *key, int index){
     for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
         if(json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0){ // token's type is the string and token's string matches the key
             if(json->tokens[i + 1 + index].type == TOKEN_STRING && json->tokens[i + 1 + index].isArray == true){ // next token is the string and that is array
-                    return json->tokens[i + 1 + index].string; // return next token's index string 
-                }
+                return json->tokens[i + 1 + index].string; // return next token's index string 
+            }
         }
     }
     return NULL; // if no key is found
@@ -262,12 +263,13 @@ char *readFile(char *filename, int *fileSize){
 
 // Handle signal
 void signalhandler(int signal){
+    int i;
     int size; // the size of the JSON
     char *file;
 
     // initialize json varialbe
     JSON json = {0, };
-    
+
     if(signal == SIGUSR1){
         file = readFile("ex.json", &size); // file is the varialbe of JSON
         if(file == NULL){
@@ -276,13 +278,49 @@ void signalhandler(int signal){
 
         // parsing JSON file
         parseJSON(file, size, &json);
-
-        if(strcmp(json.tokens[0].string, "SSID") == 0){
-            printf("change_ssid를 실행\n");
-        }else if(strcmp(json.tokens[0].string, "Title") == 0){
-            printf("test를 실행\n");
+        
+        if(strcmp(json.tokens[0].string, "password") == 0){
+            char login[MAX];
+            strcpy(login, "sudo ./../login/login.sh ");
+            strcat(login, getString(&json, "password"));
+            system(login);
+        }else if(strcmp(json.tokens[0].string, "block_status_code") == 0){
+            char block[MAX];    
+            char* temp;
+            itoa(getNumber(&json, "block_status_code"), temp, 10);
+            strcpy(block, "sudo ./../block/filtering.sh ");
+            strcat(block, temp);
+            for(i = 0; i < getArrayCount(&json, "block"); i++){
+                strcat(block, getStringArray(&json, "block", i));
+            }
+            system(block);
+        }else if(strcmp(json.tokens[0].string, "moring_time") == 0){
+            char tim[MAX];
+            char* temp;
+            itoa(getNumber(&json, "block_status_code"), temp, 10);
+            strcpy(tim, "sudo ./../time_set/blocking.sh ");
+            strcat(tim, getString(&json, "moring_time"));
+            strcat(tim, getString(&json, "afternoon_time"));       
+            strcat(tim, getString(&json, "evening_time"));
+            strcat(tim, getString(&json, "after_time"));
+            strcat(tim, temp);
+            system(tim);
+        }else if(strcmp(json.tokens[0].string, "SSID") == 0){
+            char admin[MAX];
+            strcpy(admin, "sudo ./../change_conf/admin_conf.sh ");
+            strcat(admin, getString(&json, "SSID"));
+            strcat(admin, getString(&json, "password"));
+            system(admin);
+        }else if(strcmp(json.tokens[0].string, "my_ip") == 0){
+            char ipconf[MAX];
+            strcpy(ipconf, "sudo ./../change_conf/ip_conf.sh ");
+            strcat(ipconf, getString(&json, "my_ip"));
+            strcat(ipconf, getString(&json, "my_subnetmask"));
+            strcat(ipconf, getString(&json, "DHCP_start_ip"));
+            strcat(ipconf, getString(&json, "DHCP_end_ip"));
+            system(ipconf);
         }else{
-            printf("Error\n");
+            printf("ERROR\n");
         }
    }else if(signal == SIGUSR2){
        file = readFile("ex.json", &size); // file is the varialbe of JSON

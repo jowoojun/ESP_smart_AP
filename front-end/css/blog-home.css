@@ -6,45 +6,28 @@
 
 body {
     padding-top: 100px;
-    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top.
-     Change if height of navigation changes. */
     background-image: url('../images/bg.jpg');
-
 }
 
 footer {
     margin: 30px 0;
 }
 
-.save_config, .update_config{
+.save_config{
   float: right;
   margin-top: 15px;
+<<<<<<< HEAD
 }
 
 .sys_config{
+=======
+>>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
   margin-bottom: 10px;
 }
 
 .log_config{
   width: 100%
   margin-bottom: 20px;
-}
-.twin_config{
-  margin-top: 80px;
-}
-.twin_config div{
-  margin-bottom: 50px;
-}
-.add_email{
- width: 90px;
- height: 30px;
-}
-.update_config{
-  width: 130px;
-  height: 50px;
-}
-.port_forwarding_config td:nth-child(3){
-  padding-left: 30px;
 }
 .tabcontent.current{
   display: block;
@@ -79,9 +62,13 @@ footer {
   margin: 4px;
 }
 
+<<<<<<< HEAD
 
 .ip_field,
 .black_mac{
+=======
+.ip_field{
+>>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
   width: 30px;
 }
 
@@ -93,6 +80,7 @@ footer {
   display: none;
 }
 
+<<<<<<< HEAD
 #mac_blacklist,#word_list,#time_blacklist{
   width:100%;
 }
@@ -135,6 +123,8 @@ div#search_area p{
   float: left;
   width: 66.66666667%;
 }
+=======
+>>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
 #block_page, #block_list{
   width: 200px;
   height: 250px;
