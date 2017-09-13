@@ -9,17 +9,17 @@ $(function(){
 });
 
 
-$(function(){
-  $("ul.tab li ul li").click(function(){
-    var active_tab=$(this).attr("data-tab");
-    $("ul.tab li ul li").removeClass("current");
-    $(".tabcontent").removeClass("current");
-    $(this).addClass("current");
-    $('#'+active_tab).addClass('current');
-    $('#'+active_tab+'_desc').addClass('current');
-  })
-});
 
+$(function(){
+    $('ul.tab li').click(function(){
+      var active_tab=$(this).attr('data-tab');
+      $('ul.tab li').removeClass('current');
+      $('.tabcontent').removeClass('current');
+      $(this).addClass('current');
+      $('#'+active_tab).addClass('current');
+      $('#'+active_tab+'_desc').addClass('current');
+    })
+});
 
 $(function(){
   $("#add_word").click(function(){
