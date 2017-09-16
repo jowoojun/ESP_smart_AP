@@ -16,12 +16,9 @@ footer {
 .save_config{
   float: right;
   margin-top: 15px;
-<<<<<<< HEAD
 }
 
 .sys_config{
-=======
->>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
   margin-bottom: 10px;
 }
 
@@ -62,13 +59,8 @@ footer {
   margin: 4px;
 }
 
-<<<<<<< HEAD
-
 .ip_field,
 .black_mac{
-=======
-.ip_field{
->>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
   width: 30px;
 }
 
@@ -80,7 +72,7 @@ footer {
   display: none;
 }
 
-<<<<<<< HEAD
+
 #mac_blacklist,#word_list,#time_blacklist{
   width:100%;
 }
@@ -123,8 +115,7 @@ div#search_area p{
   float: left;
   width: 66.66666667%;
 }
-=======
->>>>>>> 2346563544cee9a4200e8565285068f08a0c5f48
+
 #block_page, #block_list{
   width: 200px;
   height: 250px;
@@ -157,7 +148,7 @@ div#search_area p{
   margin-right: 30px;
   margin-top: 30px;
 }
-#move_to_drop{
+#move_to_allow{
   margin-bottom: 10px;
 }
 .onoffswitch {
@@ -167,7 +158,7 @@ div#search_area p{
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select: none;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 .onoffswitch-checkbox {
     display: none;
