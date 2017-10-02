@@ -6,16 +6,18 @@
 void print_log(char * log){
     FILE * read;
     char str[MAX];
-    time_t time;
+    time_t now_time;
+    
+    time(&now_time); 
 
-    read = fopen("~/project/log/log.txt","a");
+    read = fopen("/home/pi/project/esp_smart_ap/log/log.txt","a");
     if(!read){
-        printf("can't open the file\n");
+        printf("log file can't open the file\n");
     }
 
     strcpy(str,log);
     strcat(str," : ");
-    strcat(str,ctime(&time));
+    strcat(str,ctime(&now_time));
     
     fprintf( read , "%s\n" , str );
     

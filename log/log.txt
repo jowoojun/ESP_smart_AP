@@ -1,0 +1,18 @@
+change_ssid : Thu Jan  1 09:00:00 1970
+
+change_pwd : Thu Jan  1 09:00:00 1970
+
+change_ip : Thu Jan  1 09:00:00 1970
+
+change_netmask : Thu Jan  1 09:00:00 1970
+
+change_DHCPrange : Thu Jan  1 09:00:00 1970
+
+change_ssid : Thu Jan  1 09:00:00 1970
+
+change_pwd : Thu Jan  1 09:00:00 1970
+
+change_ssid : Tue Oct  3 00:15:09 2017
+
+change_pwd : Tue Oct  3 00:15:09 2017
+
