@@ -3,23 +3,6 @@
 #include<string.h>
 #define MAX 100 
 
-void log_print(){
-    FILE * log; // log file
-    
-    // open the log file
-    log = fopen("/home/ap_log/ap_system.log" ,"a");
-    if(!log){
-        printf("log file open fail\n");
-        return ;
-    }
-
-    fprintf(log,"%s\n","\"dhcp-range설정\"");
-    
-    fclose(log);
-
-    return ;
-}
-
 // change dnsmasq file
 int change_DHCPrange(char start_ip[MAX], char end_ip[MAX]){
      
@@ -73,7 +56,5 @@ int main( int argc , char * argv[] ){
     // change DHCP range
     change_DHCPrange(argv[1],argv[2]);
     
-    // print log
-    log_print();
     return 0;
 }
