@@ -8,3 +8,5 @@ rm ip/change_netmask
 rm ip/change_DHCPrange
 
 rm time_set/time_set
+
+rm log/log_print

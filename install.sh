@@ -12,3 +12,5 @@ gcc -o ip/change_DHCPrange ip/change_DHCPrange.c
 # time setting
 gcc -o time_set/time_set time_set/time_set.c
 
+
+gcc -o log/log_print log/log_print.c
