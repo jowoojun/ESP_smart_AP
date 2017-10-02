@@ -8,7 +8,7 @@ void print_log(char * log){
     char str[MAX];
     time_t time;
 
-    read = fopen("log.txt","a");
+    read = fopen("~/project/log/log.txt","a");
     if(!read){
         printf("can't open the file\n");
     }

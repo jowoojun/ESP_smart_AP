@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# compile c file 
-gcc -o change_ip change_ip.c
-gcc -o change_netmask change_netmask.c
-gcc -o change_DHCPrange change_DHCPrange.c
-
 # run change_ip.c
 sudo ./change_ip $1
 
@@ -32,10 +27,3 @@ sudo rm /etc/dnsmasq.conf
 
 #change the name of dnsmasq.bak to dnsmasq.conf
 sudo mv /etc/dnsmasq.bak /etc/dnsmasq.conf
-
-# remove binary files
-rm change_ip
-rm change_netmask
-rm change_DHCPrange
-
-

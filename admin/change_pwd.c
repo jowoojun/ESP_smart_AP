@@ -3,24 +3,6 @@
 #include<string.h>
 #define MAX 100
 
-// log print
-void log_print(){
-    FILE * log; // log file
-
-    // open the log file
-    log = fopen("/home/ap_log/ap_system.log" ,"a");
-    if(!log){
-        printf("log file open fail\n");
-        return ;
-    }
-
-    fprintf(log,"%s\n","\"비멀번호변경\"");
-
-    fclose(log);
-
-    return ;
-}
-
 int main( int argc , char * argv[] ){
     
     FILE * orgin; // orgin file
@@ -61,9 +43,6 @@ int main( int argc , char * argv[] ){
     }
 
     fcloseall();
-
-    // log print
-    log_print();
 
     return 0;
 }
