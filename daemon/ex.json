@@ -1,11 +1,11 @@
 {
-    "Title" : "pipi",
-    "password" : "00000000",
-    "channel" : 2,
-    "BlackList" : [
-        "00:00:00:00:00:00",
-        "01:01:01:01:01:01",
-        "10:10:10:10:10:10",
-        "11:11:11:11:11:11"
-    ]
+    "morning_hour" : "10",
+    "morning_min" : "30",
+    "afternoon_hour" : "10",
+    "afternoon_min" : "30",
+    "evening_hour" : "10",
+    "evening_min" : "30",
+    "after_hour" : "10",
+    "after_min" : "30",
+    "block_status_code" : 0
 }

@@ -6,7 +6,7 @@
 
 // Max token count = 20
 #define TOKEN_COUNT 20
-#define MAX 100
+#define MAX 1000
 
 // token enum
 typedef enum _TOKEN_TYPE{
@@ -29,6 +29,8 @@ typedef struct _JSON {
     TOKEN tokens[TOKEN_COUNT];
 }JSON;
 
+char *getStringArray(JSON *json, char *key, int index);
+
 // Get the string corresponding to the key
 char *getString(JSON *json, char *key){ 
     int i;
@@ -43,7 +45,7 @@ char *getString(JSON *json, char *key){
 }
 
 // Get the string of the index corresponding to the key
-char *getArrayString(JSON *json, char *key, int index){ 
+char *getStringArray(JSON *json, char *key, int index){ 
     int i;
     for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
         if(json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0){ // token's type is the string and token's string matches the key
@@ -286,37 +288,54 @@ void signalhandler(int signal){
             system(login);
         }else if(strcmp(json.tokens[0].string, "block_status_code") == 0){
             char block[MAX];    
-            char* temp;
-            itoa(getNumber(&json, "block_status_code"), temp, 10);
-            strcpy(block, "sudo ./../block/filtering.sh ");
+            char temp[8];
+            sprintf(temp, "%d ", getNumber(&json, "block_status_code")); 
+            strcpy(block, "sudo ./../block/filtering ");
             strcat(block, temp);
             for(i = 0; i < getArrayCount(&json, "block"); i++){
                 strcat(block, getStringArray(&json, "block", i));
+                strcat(block, " ");
             }
             system(block);
-        }else if(strcmp(json.tokens[0].string, "moring_time") == 0){
+        }else if(strcmp(json.tokens[0].string, "morning_hour") == 0){
             char tim[MAX];
-            char* temp;
-            itoa(getNumber(&json, "block_status_code"), temp, 10);
+            char temp[8];
+            sprintf(temp, "%d", getNumber(&json, "block_status_code")); 
             strcpy(tim, "sudo ./../time_set/blocking.sh ");
-            strcat(tim, getString(&json, "moring_time"));
-            strcat(tim, getString(&json, "afternoon_time"));       
-            strcat(tim, getString(&json, "evening_time"));
-            strcat(tim, getString(&json, "after_time"));
+            strcat(tim, getString(&json, "morning_hour"));
+            strcat(tim, " ");
+            strcat(tim, getString(&json, "morning_min"));
+            strcat(tim, " ");
+            strcat(tim, getString(&json, "afternoon_hour")); 
+            strcat(tim, " ");
+            strcat(tim, getString(&json, "afternoon_min")); 
+            strcat(tim, " ");
+            strcat(tim, getString(&json, "evening_hour"));
+            strcat(tim, " ");
+            strcat(tim, getString(&json, "evening_min"));
+            strcat(tim, " ");
+            strcat(tim, getString(&json, "after_hour"));
+            strcat(tim, " ");
+            strcat(tim, getString(&json, "after_min"));
+            strcat(tim, " ");
             strcat(tim, temp);
             system(tim);
         }else if(strcmp(json.tokens[0].string, "SSID") == 0){
             char admin[MAX];
             strcpy(admin, "sudo ./../change_conf/admin_conf.sh ");
             strcat(admin, getString(&json, "SSID"));
+            strcat(admin, " ");
             strcat(admin, getString(&json, "password"));
             system(admin);
         }else if(strcmp(json.tokens[0].string, "my_ip") == 0){
             char ipconf[MAX];
             strcpy(ipconf, "sudo ./../change_conf/ip_conf.sh ");
             strcat(ipconf, getString(&json, "my_ip"));
+            strcat(ipconf, " ");
             strcat(ipconf, getString(&json, "my_subnetmask"));
+            strcat(ipconf, " ");
             strcat(ipconf, getString(&json, "DHCP_start_ip"));
+            strcat(ipconf, " ");
             strcat(ipconf, getString(&json, "DHCP_end_ip"));
             system(ipconf);
         }else{
@@ -327,22 +346,23 @@ void signalhandler(int signal){
        if(file == NULL){
            return ;
        }
-
+       char tim[MAX];
        // parsing JSON file
        parseJSON(file, size, &json);
        
+       printf("%d, %s\n", strcmp(json.tokens[0].string, "morning_hour"),json.tokens[0].string); 
        // print JSON content
        printf("%s : %s\n", json.tokens[0].string, getString(&json, json.tokens[0].string));
        printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
-       printf("%s : %f\n", json.tokens[4].string, getNumber(&json, json.tokens[4].string));
-       printf("%s : \n", json.tokens[6].string);
+       printf("%s : %f\n", json.tokens[4].string, getString(&json, json.tokens[4].string));
 
-       int lists = getArrayCount(&json, json.tokens[6].string);
-        
+       // int lists = getArrayCount(&json, json.tokens[6].string);
+       /* 
        int i;
        for(i = 0; i < lists; i++){
-           printf("  %s\n", getArrayString(&json, json.tokens[6].string, i));
+           printf("  %s\n", getStringArray(&json, json.tokens[6].string, i));
        }
+       */
        printf("\n");
    }
 
