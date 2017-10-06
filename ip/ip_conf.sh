@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # run change_ip.c
-sudo ./change_ip $1
+sudo /home/pi/project/esp_smart_ap/ip/change_ip $1
 
 # remove interfaces file and change interfaces.bak file to interfaces file
 sudo rm /etc/network/interfaces
@@ -12,7 +12,7 @@ sudo rm /etc/dnsmasq.conf
 sudo mv /etc/dnsmasq.bak /etc/dnsmasq.conf
 
 #run the change_netmask.c file
-sudo ./change_netmask $2
+sudo /home/pi/project/esp_smart_ap/ip/change_netmask $2
 
 #remove the interfaces file
 sudo rm /etc/network/interfaces
@@ -20,7 +20,7 @@ sudo rm /etc/network/interfaces
 sudo mv /etc/network/interfaces.bak /etc/network/interfaces
 
 #run the change_DHCPrange.c 
-sudo ./change_DHCPrange $3 $4
+sudo /home/pi/project/esp_smart_ap/ip/change_DHCPrange $3 $4
 
 #remove dnsmasq.conf
 sudo rm /etc/dnsmasq.conf
@@ -29,7 +29,7 @@ sudo rm /etc/dnsmasq.conf
 sudo mv /etc/dnsmasq.bak /etc/dnsmasq.conf
 
 # Add a log tet in logfile
-sudo ../log/log_print change_ip 
-sudo ../log/log_print change_netmask 
-sudo ../log/log_print change_DHCPrange
+sudo /home/pi/project/esp_smart_ap/log/log_print change_ip 
+sudo /home/pi/project/esp_smart_ap/log/log_print change_netmask 
+sudo /home/pi/project/esp_smart_ap/log/log_print change_DHCPrange
 
