@@ -1,3 +1,7 @@
 #!/bin/sh
 
-sudo ../log/log_print change_blocksite_category
+# print log
+sudo /home/pi/project/esp_smart_ap/log/log_print change_blocksite_category
+
+# backup file
+sudo /home/pi/project/esp_smart_ap/initial_bakup/initial_bakup.sh
