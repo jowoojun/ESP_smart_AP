@@ -33,3 +33,5 @@ sudo /home/pi/project/esp_smart_ap/log/log_print change_ip
 sudo /home/pi/project/esp_smart_ap/log/log_print change_netmask 
 sudo /home/pi/project/esp_smart_ap/log/log_print change_DHCPrange
 
+# backup file
+sudo /home/pi/project/esp_smart_ap/initial_bakup/initial_bakup.sh
