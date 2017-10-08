@@ -1,10 +1,13 @@
 import AdminInfoContainer from './AdminInfoContainer';
 import NetworkInfoContainer from './NetworkInfoContainer';
-import InternetConnectContainer from './InternetConnectContainer';
-
+import IPSettingContainer from './IPSettingContainer'
+import SystemLogContainer from './SystemLogContainer'
+import RefuseContainer from './RefuseContainer';
 
 export {
     AdminInfoContainer,
     NetworkInfoContainer,
-    InternetConnectContainer,
-}
+    IPSettingContainer,
+    SystemLogContainer,
+    RefuseContainer
+};

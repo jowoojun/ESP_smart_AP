@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {Link} from 'react-router';
 import Footer from '../Footer';
 
-class Nav extends PureComponent{
+export default class Nav extends PureComponent{
 
     active(path){
 
@@ -28,6 +28,15 @@ class Nav extends PureComponent{
                                 <li data-tab="admin_setting">
                                     <Link to ='/admin' className={this.active('/admin')}>Admin 설정</Link>
                                 </li>
+                                <li data-tab="admin_setting">
+                                    <Link to ='/ip' className={this.active('/ip')}>IP 설정</Link>
+                                </li>
+                                <li data-tab="admin_setting">
+                                    <Link to ='/log' className={this.active('/log')}>시스템 로그</Link>
+                                </li>
+                                <li>
+                                    <a href="general_settings.html">Home</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -41,6 +50,3 @@ class Nav extends PureComponent{
         );
     }
 }
-
-
-export default Nav;
