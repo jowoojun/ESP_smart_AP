@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 
 
-class NetworkInfoSide extends PureComponent{
+export default class NetworkInfoSide extends PureComponent{
 
     render(){
 
@@ -9,21 +9,14 @@ class NetworkInfoSide extends PureComponent{
             <div className="col-md-4">
                 <div className="well tabcontent current" id="internet_info_desc">
                     <h4>설명</h4>
-                      <ul>
-                        <li>SSID : 무선 랜을 통해 전송되는 패킷들의 각 헤더에 덧붙여지는 32byte 길이의 고유 식별자</li>
-                        <li>외부 IP : </li>
-                        <li>기본 DNS 서버 :</li>
-                        <li>보조 DNS 서버 :</li>
-                        <li>GATEWAY : </li>
-                        <li>DHCP 시작 IP :</li>
-                        <li>DHCP 종료 IP :</li>
-                        <li>MAC 주소 :</li>
-                        <li>원격관리 :</li>
-                      </ul>
+                        <ul>
+                            <li>IP주소 : 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
+                                네트워크에 연결된 장치가 라우터이든 일반 서버이든, 모든 기계는 이 특수한 번호를 가지고 있어야 한다.
+                                이 번호를 이용하여 발신자를 대신하여 메시지가 전송되고 수신자를 향하여 예정된 목적지로 전달된다.
+                                IP 주소를 줄여서 IP라고 부르기도 하나 IP는 인터넷 규약 자체를 가리키는 말이기 때문에 엄밀하게는 구별해야 한다.</li>
+                        </ul>
                 </div>
             </div>
         );
     }
 }
-
-export default NetworkInfoSide;

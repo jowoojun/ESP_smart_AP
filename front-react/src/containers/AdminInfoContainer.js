@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import {AdminInfo, AdminInfoSide} from '../components';
-import {ChangeModeButton} from '../components';
 
 
 class AdminInfoContainer extends Component{
@@ -17,7 +16,6 @@ class AdminInfoContainer extends Component{
             <div>
                 <AdminInfo />
                 <AdminInfoSide />
-                <ChangeModeButton />
             </div>
         );
     }

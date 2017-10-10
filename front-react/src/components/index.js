@@ -7,13 +7,14 @@ import NetworkInfoSide from './Aside/NetworkInfoSide';
 import AdminInfo from './Section/AdminInfo';
 import AdminInfoSide from './Aside/AdminInfoSide';
 
-import InternetConnect from './Section/InternetConnect';
-import InternetConnectSide from './Aside/InternetConnectSide';
+import IPSetting from './Section/IPSetting';
+import IPSettingAside from './Aside/IPSettingAside';
 
+import SystemLog from './Section/SystemLog';
+import SystemLogAside from './Aside/SystemLogAside';
 
-import ChangeModeButton from './ChangeModeButton';
-import ChangeModeButtonAdvance from './ChangeModeButton/advance';
-
+import Refuse from './Section/Refuse';
+import RefuseAside from './Aside/RefuseAside';
 
 import Footer from './Footer';
 
@@ -27,10 +28,14 @@ export {
     AdminInfo,
     AdminInfoSide,
 
-    InternetConnect,
-    InternetConnectSide,
+    IPSetting,
+    IPSettingAside,
 
-    ChangeModeButton,
-    ChangeModeButtonAdvance,
+    SystemLog,
+    SystemLogAside,
+
+    Refuse,
+    RefuseAside,
+
     Footer,
 }
