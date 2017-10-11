@@ -18,27 +18,7 @@ struct itm
 };
 
 
-int main( int argc, char* argv[] ){
-    
-    time_t curr;
-    struct tm * t;
-    curr = time(NULL);
-    t = localtime(&curr);
-
-    struct itm  it;
-    it.Shour = atoi(argv[1]);
-    it.Smin = atoi(argv[2]);
-    it.Lhour = atoi(argv[3]);
-    it.Lmin = atoi(argv[4]);
-    it.Ahour = atoi(argv[5]);
-    it.Amin = atoi(argv[6]);
-    it.AShour = atoi(argv[7]);
-    it.ASmin = atoi(argv[8]);
-
-    char enable_internet[MAX];
-    strcpy( enable_internet,"sudo sysctl -w net.ipv4.ip_forward=1" );
-    char disable_internet[MAX];
-    strcpy( disable_internet,"sudo sysctl -w net.ipv4.ip_forward=0" );
+void time_set(struct tm * t , struct itm it){
 
     //time_set
     while(1){
@@ -76,6 +56,34 @@ int main( int argc, char* argv[] ){
         sleep(10);
 
     }
+}
+
+void setdata(int ac , char * av[]){
+
+    FILE * timedata; 
+    timedata = fopen("","w");
+
+
+}
+
+int main( int argc, char* argv[] ){
+    
+    time_t curr;
+    struct tm * t;
+    curr = time(NULL);
+    t = localtime(&curr);
+
+    struct itm  it;
+    it.Shour = atoi(argv[1]);
+    it.Smin = atoi(argv[2]);
+    it.Lhour = atoi(argv[3]);
+    it.Lmin = atoi(argv[4]);
+    it.Ahour = atoi(argv[5]);
+    it.Amin = atoi(argv[6]);
+    it.AShour = atoi(argv[7]);
+    it.ASmin = atoi(argv[8]);
+
+    setdata
 
     return 0;
 }

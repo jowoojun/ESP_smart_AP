@@ -1,11 +1,7 @@
 {
-    "morning_hour" : "10",
-    "morning_min" : "30",
-    "afternoon_hour" : "10",
-    "afternoon_min" : "30",
-    "evening_hour" : "10",
-    "evening_min" : "30",
-    "after_hour" : "10",
-    "after_min" : "30",
-    "block_status_code" : 0
+  "block_status_code": 1,
+  "block": [
+    "gambling", 
+    "sns" 
+  ]
 }

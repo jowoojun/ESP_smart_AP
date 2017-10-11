@@ -350,19 +350,19 @@ void signalhandler(int signal){
        // parsing JSON file
        parseJSON(file, size, &json);
        
-       printf("%d, %s\n", strcmp(json.tokens[0].string, "morning_hour"),json.tokens[0].string); 
+       //printf("%d, %s\n", strcmp(json.tokens[0].string, "morning_hour"),json.tokens[0].string); 
        // print JSON content
-       printf("%s : %s\n", json.tokens[0].string, getString(&json, json.tokens[0].string));
-       printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
-       printf("%s : %f\n", json.tokens[4].string, getString(&json, json.tokens[4].string));
+       printf("%s : %d\n", json.tokens[0].string, getNumber(&json, json.tokens[0].string));
+       //printf("%s : %s\n", json.tokens[2].string, getString(&json, json.tokens[2].string));
+       //printf("%s : %f\n", json.tokens[4].string, getString(&json, json.tokens[4].string));
 
-       // int lists = getArrayCount(&json, json.tokens[6].string);
-       /* 
+       int lists = getArrayCount(&json, json.tokens[2].string);
+       
        int i;
        for(i = 0; i < lists; i++){
-           printf("  %s\n", getStringArray(&json, json.tokens[6].string, i));
+           printf("  %s\n", getStringArray(&json, json.tokens[2].string, i));
        }
-       */
+       
        printf("\n");
    }
 

@@ -26,10 +26,10 @@ int change_interface(char new_ip[MAX]){
 
     while( fgets(str , MAX , origin) != NULL ){
 
-        if( strncmp( "\taddress" , str,strlen("\taddress")) == 0 ){
+        if( strncmp( "address" , str,strlen("address")) == 0 ){
 
             // add new ip address
-            strcpy(str , "\taddress ");
+            strcpy(str , "address ");
             strcat(str , new_ip);
             fprintf(bak , "%s\n" ,str);
 

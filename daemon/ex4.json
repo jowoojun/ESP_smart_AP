@@ -1,0 +1,12 @@
+{
+  "morning_hour": 8,
+  "morning_min": 10,
+  "afternoon_hour" : 12,
+  "afternoon_min" : 20,
+  "evening_hour" : 17,
+  "evening_min" : 30,
+  "after_hour" : 22,
+  "after_hour" : 40,
+  "block_status_code" : 1
+}
+

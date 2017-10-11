@@ -37,7 +37,23 @@ void change_category(char * category , FILE * bannedsitelist){
     return ;
 }
 
+void on_off_blocking(const char * nf){
+     
+    char start_stop[MAX];
+    
+    if( !strcmp(nf,"1") ){
+        strcpy(start_stop,"sudo e2guardian");
+    }else{
+        strcpy(start_stop,"sudo e2guardian -q");
+    }
+
+    system(start_stop);
+
+    return ;
+}
+
 int main(int argc , char * argv[]){
+    char *on_off;
 
     FILE * bannedsitelist;
     bannedsitelist = fopen("/usr/local/etc/e2guardian/lists/bannedsitelist" , "w");
@@ -45,10 +61,14 @@ int main(int argc , char * argv[]){
         printf("cat not open bannedsitelist \n");
     }
 
+    strcpy( on_off ,argv[1] );
+
     int i;
-    for( i = 1 ; i < argc ; i++){
+    for( i = 2 ; i < argc ; i++){
         change_category(argv[i] , bannedsitelist);
     }
+    
+    on_off_blocking(on_off);
 
     system("./end.sh");
 

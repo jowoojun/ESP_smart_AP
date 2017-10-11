@@ -8,9 +8,10 @@ sudo service dnsmasq stop
 # ifdown ifup
 sudo ifdown wlan0; sudo ifup wlan0
 
+# restart dnsmasq
+sudo service dnsmasq start
+
 # restart hostapd
 sudo service hostapd start
 
-# restart dnsmasq
-sudo service dnsmasq start
 

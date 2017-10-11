@@ -15,8 +15,12 @@ sudo rm /etc/hostapd/hostapd.conf
 sudo mv /etc/hostapd/hostapd.bak /etc/hostapd/hostapd.conf
 
 # Add a log text in log file
-sudo ,./log/log_print change_ssid
+sudo ../log/log_print change_ssid
 sudo ../log/log_print change_pwd
 
 # backup file
 sudo ../initial_bakup/initial_bakup.sh
+
+# restart ap
+sudo service hostapd stop
+sudo service hostapd start

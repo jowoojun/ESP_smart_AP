@@ -35,3 +35,6 @@ sudo ../log/log_print change_DHCPrange
 
 # backup file
 sudo ../initial_bakup/initial_bakup.sh
+
+# restart ap system
+sudo ../change_conf/restart.sh
