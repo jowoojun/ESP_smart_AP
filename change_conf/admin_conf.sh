@@ -15,8 +15,8 @@ sudo rm /etc/hostapd/hostapd.conf
 sudo mv /etc/hostapd/hostapd.bak /etc/hostapd/hostapd.conf
 
 # Add a log text in log file
-sudo ../log/log_print change_ssid
-sudo ../log/log_print change_pwd
+sudo ../log/log.sh change_ssid
+sudo ../log/log.sh change_pwd
 
 # make admin_conf.json file
 ../change_conf/make_admin_json $1 $2

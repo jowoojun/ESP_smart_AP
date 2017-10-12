@@ -33,9 +33,9 @@ sudo mv /etc/dnsmasq.bak /etc/dnsmasq.conf
 ../change_conf/make_ap_json $3 $4
 
 # Add a log tet in logfile
-sudo ../log/log_print change_ip 
-sudo ../log/log_print change_netmask 
-sudo ../log/log_print change_DHCPrange
+sudo ../log/log.sh change_ip 
+sudo ../log/log.sh change_netmask 
+sudo ../log/log.sh change_DHCPrange
 
 # backup file
 sudo ../initial_bakup/initial_bakup.sh

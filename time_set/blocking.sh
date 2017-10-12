@@ -11,3 +11,4 @@ else
 echo "kil timeset"
 fi
 
+../log/log.sh time_set
