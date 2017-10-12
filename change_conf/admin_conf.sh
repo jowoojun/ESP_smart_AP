@@ -18,6 +18,9 @@ sudo mv /etc/hostapd/hostapd.bak /etc/hostapd/hostapd.conf
 sudo ../log/log_print change_ssid
 sudo ../log/log_print change_pwd
 
+# make admin_conf.json file
+../change_conf/make_admin_json $1 $2
+
 # backup file
 sudo ../initial_bakup/initial_bakup.sh
 
