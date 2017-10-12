@@ -22,5 +22,5 @@ sudo iptables -A FORWARD -i wlan0 -j ACCEPT
 sudo iptables-save > /etc/iptables.ipv4.nat
 sudo sysctl -p
 
-sudo e2gaurdian
-sudo servie tinyproxy start
+sudo e2guardian
+sudo service tinyproxy start

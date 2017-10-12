@@ -273,7 +273,7 @@ void signalhandler(int signal){
     JSON json = {0, };
 
     if(signal == SIGUSR1){
-        file = readFile("ex.json", &size); // file is the varialbe of JSON
+        file = readFile("info.json", &size); // file is the varialbe of JSON
         if(file == NULL){
             return ;
         }

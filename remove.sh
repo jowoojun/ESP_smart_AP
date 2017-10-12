@@ -13,3 +13,7 @@ rm time_set/time_set
 rm log/log_print
 
 rm block/filtering
+
+rm change_conf/make_admin_json
+rm change_conf/make_ip_json
+rm change_conf/make_ap_json

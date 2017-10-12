@@ -1,12 +1,11 @@
 {
-  "morning_hour": 8,
-  "morning_min": 10,
-  "afternoon_hour" : 12,
-  "afternoon_min" : 20,
-  "evening_hour" : 17,
-  "evening_min" : 30,
-  "after_hour" : 22,
-  "after_hour" : 40,
-  "block_status_code" : 1
+"morning_hour":"9"
+,"morning_min":"00"
+,"afternoon_hour":"12"
+,"afternoon_min":"00"
+,"evening_hour":"5"
+,"evening_min":"00"
+,"after_hout":"9"
+,"after_min":"00"
+,"block_status_code":"1"
 }
-

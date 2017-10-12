@@ -1,9 +1,5 @@
 {
-  "block_status_code": 1,
-  "block": [
-    "gambling", 
-    "social_networks",
-    "games",
-    "blog"
-  ]
+"block_status_code":"1"
+,"block":["adult","astrology","bank","chat","drugs"]
+,"pagelist":["blog","cooking","gambling","games","mail","social_networks","shopping"]
 }
