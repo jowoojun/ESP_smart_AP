@@ -3,25 +3,46 @@
 #include <time.h>
 #define MAX 100
 
-void print_log(char * log){
-    FILE * read;
+void print_log(char * log_title){
+    FILE * log;
+    FILE * log_bak;
+    char  nowtime[MAX];
     char str[MAX];
     time_t now_time;
     
     time(&now_time); 
-
-    read = fopen("/home/pi/project/esp_smart_ap/log/log.txt","a");
-    if(!read){
+    
+    strcpy(nowtime , ctime(&now_time));
+    nowtime[strlen(nowtime) -1 ] = '"';
+    
+    
+    log = fopen("/home/pi/project/esp_smart_ap/log/log.json","r");
+    if(!log){
         printf("log file can't open the file\n");
     }
 
-    strcpy(str,log);
-    strcat(str," : ");
-    strcat(str,ctime(&now_time));
+    log_bak = fopen("/home/pi/project/esp_smart_ap/log/log.bak","w");
+    if(!log_bak){
+        printf("log_bak file can't open the file\n");
+    }
     
-    fprintf( read , "%s\n" , str );
-    
-    fclose(read);
+    if( fgets( str , MAX , log )){
+        printf("파일이 있을때\n");
+        do{
+            if(strcmp(str,"}") != 0){
+                fprintf(log_bak,"%s",str);            
+            }else{
+                fprintf(log_bak,"\t,\"%s\" : \"%s \n}", log_title ,nowtime );            
+            }
+        }while( fgets( str , MAX , log ));
+
+    }else{
+        printf("파일이 없을때\n");
+        fprintf(log_bak,"{\n \t\"%s\" : \"%s \n}", log_title , nowtime );  
+    }
+
+    fclose(log);
+    fclose(log_bak);
    
     return ;
 }
