@@ -2,6 +2,8 @@
   "block_status_code": 1,
   "block": [
     "gambling", 
-    "sns" 
+    "social_networks",
+    "games",
+    "blog"
   ]
 }

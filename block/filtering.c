@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define MAX 100
 void change_category(char * category , FILE * bannedsitelist){
 
@@ -37,11 +38,11 @@ void change_category(char * category , FILE * bannedsitelist){
     return ;
 }
 
-void on_off_blocking(const char * nf){
+void on_off_blocking(int  nf){
      
     char start_stop[MAX];
     
-    if( !strcmp(nf,"1") ){
+    if(nf){
         strcpy(start_stop,"sudo e2guardian");
     }else{
         strcpy(start_stop,"sudo e2guardian -q");
@@ -53,15 +54,15 @@ void on_off_blocking(const char * nf){
 }
 
 int main(int argc , char * argv[]){
-    char *on_off;
-
+    int on_off;
+    
     FILE * bannedsitelist;
     bannedsitelist = fopen("/usr/local/etc/e2guardian/lists/bannedsitelist" , "w");
     if(!bannedsitelist){
         printf("cat not open bannedsitelist \n");
     }
 
-    strcpy( on_off ,argv[1] );
+    on_off = atoi(argv[1]); 
 
     int i;
     for( i = 2 ; i < argc ; i++){
@@ -70,7 +71,7 @@ int main(int argc , char * argv[]){
     
     on_off_blocking(on_off);
 
-    system("./end.sh");
+    system("../block/end.sh");
 
     return 0;
 }
