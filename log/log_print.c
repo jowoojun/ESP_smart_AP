@@ -16,12 +16,12 @@ void print_log(char * log_title){
     nowtime[strlen(nowtime) -1 ] = '"';
     
     
-    log = fopen("/home/pi/project/esp_smart_ap/log/log.json","r");
+    log = fopen("/home/pi/project/esp_smart_ap/info/log.json","r");
     if(!log){
         printf("log file can't open the file\n");
     }
 
-    log_bak = fopen("/home/pi/project/esp_smart_ap/log/log.bak","w");
+    log_bak = fopen("/home/pi/project/esp_smart_ap/info/log.bak","w");
     if(!log_bak){
         printf("log_bak file can't open the file\n");
     }

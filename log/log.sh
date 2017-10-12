@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # run log_print
-./log_print $1
+../log/log_print $1
 
 # remove log.json
-rm ./log.json
+rm ../info/log.json
 
 # move log.bak to log.json
-mv ./log.bak ./log.json
+mv ../info/log.bak ../info/log.json
 
 
