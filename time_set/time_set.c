@@ -57,19 +57,26 @@ void time_set(struct tm * t , struct itm it){
     }
 }
 
-void savetime(int ac , char * av[]){
-
-    FILE * timedata; 
-    timedata = fopen("./savetime","w");
-
-    int i;
-
-    for( i=1 ; i < ac ; i++){
-        fprintf(timedata , "%s\n" , av[i]);
+void makejson(int argc , char * argv[]){
+    
+    FILE * savetime = fopen("../info/time_set.json","w");
+    if(!savetime){
+        printf("cat not open time_set.json file\n");
     }
 
-    return ;
+    fprintf(savetime ,"{\n");
+    fprintf(savetime ,"\"morning_hour\":\"%s\"\n",argv[1]);
+    fprintf(savetime ,",\"morning_min\":\"%s\"\n",argv[2]);
+    fprintf(savetime ,",\"afternoon_hour\":\"%s\"\n",argv[3]);
+    fprintf(savetime ,",\"afternoon_min\":\"%s\"\n",argv[4]);
+    fprintf(savetime ,",\"evening_hour\":\"%s\"\n",argv[5]);
+    fprintf(savetime ,",\"evening_min\":\"%s\"\n",argv[6]);
+    fprintf(savetime ,",\"after_hout\":\"%s\"\n",argv[7]);
+    fprintf(savetime ,",\"after_min\":\"%s\"\n",argv[8]);
+    fprintf(savetime ,",\"block_status_code\":\"%s\"\n",argv[9]);
+    fprintf(savetime ,"}");
 
+    return ;
 }
 
 int main( int argc, char* argv[] ){
@@ -85,9 +92,9 @@ int main( int argc, char* argv[] ){
     it.AShour = atoi(argv[7]);
     it.ASmin = atoi(argv[8]);
 
-    savetime(argc,argv);
-
     time_set(t,it);
+
+    makejson(argc , argv);
 
     return 0;
 }
