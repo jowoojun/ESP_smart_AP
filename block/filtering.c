@@ -53,7 +53,68 @@ void on_off_blocking(int  nf){
     return ;
 }
 
+void makegetfile(int argc , char * argv[]){
+    char temp[MAX];
+    // 모든 카테고리를 불러와서 
+    FILE * category = fopen("./category","r"); 
+    if(!category){
+        printf("cat not open category file\n");
+        return ;
+    }
+
+    char allcategory[12][MAX];
+    int i= 0;
+    for(i = 0 ; i < 12 ; i++){
+        fscanf(category,"%s",temp);
+        strcpy(allcategory[i],temp);
+    }
+    close(category);
+
+    // open block.json file   
+    FILE * block = fopen("../info/block.json","w");
+
+    fprintf(block ,"{\n");
+    
+    // print block_status_code data
+    fprintf(block ,"\"block_status_code\":\"%s\"\n",argv[1]);
+    
+    // print block array data
+    fprintf(block ,",\"block\":[");
+    for(i = 2 ; i < argc-1 ;i++){
+        fprintf(block, "\"%s\",",argv[i]);
+    }
+    fprintf(block, "\"%s\"]\n",argv[i]);
+
+    //print pagelist array data
+    fprintf(block ,",\"pagelist\":[");
+    int k;
+    for(i = 0 ; i < 12 ; i++){
+        for( k = 2 ; k < argc ; k++){
+            if( strcmp(allcategory[i],argv[k]) == 0 ){
+                strcpy(allcategory[i],"NULL");
+            }
+        }
+    }
+
+    for(i= 0 ; i< 12 ; i++){
+        if(strcmp(allcategory[i],"NULL") != 0){
+            fprintf(block, "\"%s\"",allcategory[i]);
+        }
+        if(i != 11 && strcmp(allcategory[i],"NULL") != 0){
+            fprintf(block, ",");
+        }else if(i == 11 && strcmp(allcategory[i],"NULL") != 0){
+            fprintf(block, "]\n",argv[i]);
+        }
+    }
+
+    fprintf(block ,"}\n");
+
+    return ;
+}
+
 int main(int argc , char * argv[]){
+   
+    // 사이트 카테고리 차단
     int on_off;
     
     FILE * bannedsitelist;
@@ -70,7 +131,12 @@ int main(int argc , char * argv[]){
     }
     
     on_off_blocking(on_off);
+    // 사이트 차단 여기 까지
 
+    // get용 json파일 만들어 보기
+    makegetfile(argc , argv);
+    
+    // 나머지 end.sh 작동 시키기
     system("../block/end.sh");
 
     return 0;
