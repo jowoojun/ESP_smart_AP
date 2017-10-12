@@ -30,6 +30,7 @@ sudo mv /etc/dnsmasq.bak /etc/dnsmasq.conf
 
 # make json file
 ../change_conf/make_ip_json $1 $2 $3 $4
+../change_conf/make_ap_json $3 $4
 
 # Add a log tet in logfile
 sudo ../log/log_print change_ip 
