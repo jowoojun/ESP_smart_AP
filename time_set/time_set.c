@@ -31,26 +31,30 @@ void time_set(struct tm * t , struct itm it){
         printf("time = %d:%d\n",t->tm_hour,t->tm_min); 
         // time set
         if(       (it.Shour <= t->tm_hour && t->tm_hour <= it.Lhour) && (it.Smin <= t->tm_min && t->tm_min < it.Lmin) ){
-
-            // disalbe internet
-            system("sudo e2gaurdian -q");
+            
+            printf("차단\n");
+            system("sudo cp /usr/local/etc/e2guardian/lists/bannedsitelist_time /usr/local/etc/e2guardian/lists/bannedsitelist");
 
         }else if( (it.Lhour <= t->tm_hour && t->tm_hour <= it.Ahour) && (it.Lmin <= t->tm_min && t->tm_min < it.Amin) ){
 
-            // enable internet
-            system("sudo e2gaurdian");
+            printf("허용\n");
+            system("sudo cp /usr/local/etc/e2guardian/lists/bannedsitelist_off /usr/local/etc/e2guardian/lists/bannedsitelist");
 
         }else if( (it.Ahour <= t->tm_hour && t->tm_hour <= it.AShour) && (it.Amin <= t->tm_min && t->tm_min < it.ASmin) ){
 
             // disalbe internet
-            system("sudo e2gaurdian -q");
+            printf("차단\n");
+            system("sudo cp /usr/local/etc/e2guardian/lists/bannedsitelist_time /usr/local/etc/e2guardian/lists/bannedsitelist");
 
         }else{
 
             // enable internet
-            system("sudo e2gaurdian");
-
+            printf("허용\n");
+            system("sudo cp /usr/local/etc/e2guardian/lists/bannedsitelist_off /usr/local/etc/e2guardian/lists/bannedsitelist");
         }
+
+        system("sudo e2guardian -q");
+        system("sudo e2guardian");
 
         sleep(10);
 

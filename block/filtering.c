@@ -38,21 +38,6 @@ void change_category(char * category , FILE * bannedsitelist){
     return ;
 }
 
-void on_off_blocking(int  nf){
-     
-    char start_stop[MAX];
-    
-    if(nf){
-        strcpy(start_stop,"sudo e2guardian");
-    }else{
-        strcpy(start_stop,"sudo e2guardian -q");
-    }
-
-    system(start_stop);
-
-    return ;
-}
-
 void makegetfile(int argc , char * argv[]){
     char temp[MAX];
     // 모든 카테고리를 불러와서 
@@ -122,16 +107,22 @@ int main(int argc , char * argv[]){
     if(!bannedsitelist){
         printf("cat not open bannedsitelist \n");
     }
-
     on_off = atoi(argv[1]); 
-
+    
     int i;
     for( i = 2 ; i < argc ; i++){
         change_category(argv[i] , bannedsitelist);
     }
     
-    on_off_blocking(on_off);
-    // 사이트 차단 여기 까지
+    fclose(bannedsitelist);
+    system("cp /usr/local/etc/e2guardian/lists/bannedsitelist /usr/local/etc/e2guardian/lists/bannedsitelist_time");
+    
+    bannedsitelist = fopen("/usr/local/etc/e2guardian/lists/bannedsitelist" , "w");
+    if(!on_off){
+        // off
+        fprintf(bannedsitelist , "# off block site");
+        fclose(bannedsitelist);
+    }
 
     // get용 json파일 만들어 보기
     makegetfile(argc , argv);
