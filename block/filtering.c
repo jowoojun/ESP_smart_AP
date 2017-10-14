@@ -39,9 +39,10 @@ void change_category(char * category , FILE * bannedsitelist){
 }
 
 void makegetfile(int argc , char * argv[]){
+    printf("block.json 파일 생성\n");
     char temp[MAX];
     // 모든 카테고리를 불러와서 
-    FILE * category = fopen("./category","r"); 
+    FILE * category = fopen("../block/category","r"); 
     if(!category){
         printf("cat not open category file\n");
         return ;
@@ -117,9 +118,9 @@ int main(int argc , char * argv[]){
     fclose(bannedsitelist);
     system("cp /usr/local/etc/e2guardian/lists/bannedsitelist /usr/local/etc/e2guardian/lists/bannedsitelist_time");
     
-    bannedsitelist = fopen("/usr/local/etc/e2guardian/lists/bannedsitelist" , "w");
-    if(!on_off){
+    if(on_off == 0){
         // off
+        bannedsitelist = fopen("/usr/local/etc/e2guardian/lists/bannedsitelist" , "w");
         fprintf(bannedsitelist , "# off block site");
         fclose(bannedsitelist);
     }

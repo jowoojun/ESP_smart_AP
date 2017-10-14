@@ -25,5 +25,4 @@ sudo ../log/log.sh change_pwd
 sudo ../initial_bakup/initial_bakup.sh
 
 # restart ap
-sudo service hostapd stop
-sudo service hostapd start
+#sudo service hostapd restart

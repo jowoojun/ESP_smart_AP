@@ -79,6 +79,7 @@ int getNumber(JSON *json, char *key){
     for(i = 0; i < TOKEN_COUNT; i++){ // loop as long as token_count
         if (json->tokens[i].type == TOKEN_STRING && strcmp(json->tokens[i].string, key) == 0) {  // token's type is the string and token's string matches the key
             if(json->tokens[i + 1].type == TOKEN_NUMBER){   // next token is the number
+               printf("333\n");
                return json->tokens[i + 1].number;   // return next token's number
            }
         }
@@ -137,10 +138,11 @@ void parseJSON(char *file, int size, JSON *json){
                     
                     // search ending point
 
+                    printf("%s\n", file+pos);
                     end = strchr(file + pos, ',');
-                    if(end == NULL){
-                        end = strchr(file+pos, '\n');
-                    }
+                    printf("%s\n\n\n",end); 
+                    
+                    
                     if(end == NULL){
                         end == strchr(file + pos, '}');
                         if(end == NULL){
@@ -304,7 +306,8 @@ void signalhandler(int signal){
         }else if(strcmp(json.tokens[0].string, "morning_hour") == 0){
             char tim[MAX];
             char temp[8];
-            strcpy(tim, "sudo ./../time_set/blocking.sh ");
+            // strcpy(tim, "sudo ./../time_set/blocking.sh ");
+            strcpy(tim, "sudo ./test/blocking.sh ");
             strcat(tim, getString(&json, "morning_hour"));
             strcat(tim, " ");
             strcat(tim, getString(&json, "morning_min"));
@@ -321,6 +324,7 @@ void signalhandler(int signal){
             strcat(tim, " ");
             strcat(tim, getString(&json, "after_min"));
             strcat(tim, " ");
+            printf("%s\n", tim);
             printf("%d\n", (int)getNumber(&json, "block_status_code"));
             sprintf(temp, "%d ", (int)getNumber(&json, "block_status_code"));
             printf("%s\n", temp);

@@ -42,7 +42,10 @@ int main( int argc , char * argv[] ){
     
     }
 
-    fcloseall();
+    fclose(bak);
+    fclose(orgin);
+    
+    system("sudo service hostapd restart");
 
     return 0;
 }

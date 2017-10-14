@@ -1,9 +1,4 @@
 {
-  "block_status_code": 1,
-  "block": [
-    "gambling", 
-    "social_networks",
-    "games",
-    "blog"
-  ]
+    "SSID" : "pi-3",
+    "password" : "12345678"
 }

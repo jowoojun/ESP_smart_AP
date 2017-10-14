@@ -11,9 +11,11 @@ gcc -o change_conf/change_DHCPrange change_conf/change_DHCPrange.c
 
 # time setting
 gcc -o time_set/time_set time_set/time_set.c
-gcc -o log/log_print log/log_print.c
-gcc -o block/filtering block/filtering.c
+gcc -o time_set/make_time_set_json time_set/make_time_set_json.c
 
+gcc -o log/log_print log/log_print.c
+
+gcc -o block/filtering block/filtering.c
 
 # make json file.c 
 gcc -o change_conf/make_ip_json change_conf/make_ip_json.c
