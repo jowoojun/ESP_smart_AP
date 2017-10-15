@@ -26,19 +26,7 @@ void print_log(char * log_title){
         printf("log_bak file can't open the file\n");
     }
     
-    if( fgets( str , MAX , log )){
-        printf("파일이 있을때\n");
-        do{
-            if(strcmp(str,"}") != 0){
-                fprintf(log_bak,"%s",str);            
-            }else{
-                fprintf(log_bak,"\t,\"%s\" : \"%s \n}", log_title ,nowtime );            
-            }
-        }while( fgets( str , MAX , log ));
-
-    }else{
-        printf("파일이 없을때\n");
-        fprintf(log_bak,"{\n \t\"%s\" : \"%s \n}", log_title , nowtime );  
+    while(fgets()){
     }
 
     fclose(log);
