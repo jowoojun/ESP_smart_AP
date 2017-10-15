@@ -18,7 +18,7 @@ export default class Nav extends PureComponent{
                 <div className='wrapper'>
                     <div>
                         <div className="navbar-header">
-                            <a className="navbar-brand" href="#">일반설정</a>
+                            <a className="navbar-brand" href="/">일반설정</a>
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav tab">
@@ -35,7 +35,7 @@ export default class Nav extends PureComponent{
                                     <Link to ='/log' className={this.active('/log')}>시스템 로그</Link>
                                 </li>
                                 <li>
-                                    <a href="general_settings.html">Home</a>
+                                    <Link to ='/advance' className={this.active('/log')}>차단 시스템</Link>
                                 </li>
                             </ul>
                         </div>

@@ -1,0 +1,10 @@
+{
+"internet_status_code":"1"
+,"my_ip":"172.24.1.1"
+,"default_dns":"127.0.0.1"
+,"sub_dns":"127.0.0.1"
+,"gateway":"192.168.0.1"
+,"DHCP_start_ip":"123123.123123123"
+,"DHCP_end_ip":"1231231231.23123"
+,"DHCP_MAC_address":"b8:27:eb:6c:2b:85"
+}

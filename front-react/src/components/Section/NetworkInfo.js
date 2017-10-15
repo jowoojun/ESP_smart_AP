@@ -17,31 +17,31 @@ export default class NetworkInfo extends PureComponent{
                         </tr>
                         <tr>
                             <th>외부 IP</th>
-                            <td></td>
+                            <td>{this.props.my_ip}</td>
                         </tr>
                         <tr>
                             <th>기본 DNS 서버</th>
-                            <td></td>
+                            <td>{this.props.default_dns}</td>
                         </tr>
                         <tr>
                             <th>보조 DNS 서버</th>
-                            <td></td>
+                            <td>{this.props.sub_dns}</td>
                         </tr>
                         <tr>
                             <th>GATEWAY</th>
-                            <td></td>
+                            <td>{this.props.gateway}</td>
                         </tr>
                         <tr>
                             <th>DHCP 시작 IP</th>
-                          <td></td>
+                          <td>{this.props.DHCP_start_ip}</td>
                         </tr>
                         <tr>
                             <th>DHCP 종료 IP</th>
-                            <td></td>
+                            <td>{this.props.DHCP_end_ip}</td>
                         </tr>
                         <tr>
                             <th>MAC 주소</th>
-                            <td></td>
+                            <td>{this.props.DHCP_MAC_address}</td>
                         </tr>
                     </table>
                 </div>

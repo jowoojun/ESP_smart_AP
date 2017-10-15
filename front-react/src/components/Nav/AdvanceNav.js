@@ -19,15 +19,15 @@ class AdvanceNav extends PureComponent{
                 <div className='wrapper'>
                     <div>
                         <div className="navbar-header">
-                            <a className="navbar-brand" href="#">관리</a>
+                            <a className="navbar-brand" href="/">관리</a>
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav tab">
                                 <li className="current" data-tab="internet_info">
-                                    <Link to='/' className={this.active('/')}>차단 페이지</Link>
+                                    <Link to='/advance' className={this.active('/advance')}>차단 페이지</Link>
                                 </li>
                                 <li data-tab="admin_setting">
-                                    <Link to ='/admin' className={this.active('/admin')}>예약 차단</Link>
+                                    <Link to ='/advance/reservation' className={this.active('/advance/reservation')}>예약 차단</Link>
                                 </li>
                             </ul>
                         </div>
